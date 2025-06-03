@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npx @tailwindcss/cli -i ./assets/css/index.scss -o ./assets/css/index.css",
     "dev": "npx @tailwindcss/cli -i ./assets/css/index.scss -o ./assets/css/index.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.6",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/cli": "4.1.6",
+    "@tailwindcss/typography": "0.5.16",
     "tailwindcss": "4.1.6"
   }
 }
