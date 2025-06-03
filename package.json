@@ -1,0 +1,17 @@
+{
+  "name": "homepsychologist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./assets/css/index.scss -o ./assets/css/index.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.6",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "4.1.6"
+  }
+}
