@@ -1,0 +1,74 @@
+.hp-nav-menu {
+	@apply fixed
+	top-[4.125rem]
+	right-0
+	left-0
+	bottom-0
+	md:left-auto
+	md:bottom-auto
+	md:top-[4.75rem]
+	md:right-[2.25rem]
+	md:w-xs
+	h-auto
+	p-3
+	z-2
+	3xl:static
+	3xl:p-0
+	3xl:top-0
+	3xl:right-0
+	3xl:!shadow-none
+	3xl:w-full
+	flex 
+	flex-none 
+	flex-row
+	bg-white
+	transition-all;
+	box-shadow: 0px 50px 14px rgba(84, 84, 84, 0),
+		0px 32px 13px rgba(84, 84, 84, 0.01), 0px 18px 11px rgba(84, 84, 84, 0.02),
+		0px 8px 8px rgba(84, 84, 84, 0.03), 0px 2px 4px rgba(84, 84, 84, 0.04);
+}
+
+.hp-nav-menu__hidden {
+	@apply max-3xl:!hidden;
+}
+
+.hp-menu {
+	@apply flex flex-none flex-col 3xl:flex-row w-full gap-2 3xl:gap-4;
+
+	.menu-item > a {
+		@apply inline-block
+		w-full
+		px-4 
+		py-1 
+		bg-white 
+		text-[1.125rem] 
+		font-medium 
+		text-gray-800 
+		hover:bg-emerald-100 
+		hover:text-emerald-700 
+		rounded-xl
+		3xl:inline
+		3xl:rounded-2xl 
+		transition-colors;
+	}
+
+	.current_page_item > a {
+		@apply font-bold bg-emerald-100 text-emerald-700;
+	}
+}
+
+.hp-menu-button {
+	@apply block 3xl:hidden w-8 h-8 p-1 md:w-12 md:h-12 md:p-3 rounded-sm md:rounded-xl bg-gray-50 hover:bg-gray-100 focus:bg-gray-100 cursor-pointer;
+}
+
+.hp-menu-button[data-checked=false] {
+	.hp-menu-button__icon:last-child {
+		@apply hidden;
+	}
+}
+
+.hp-menu-button[data-checked=true] {
+	.hp-menu-button__icon:first-child {
+		@apply hidden;
+	}
+}

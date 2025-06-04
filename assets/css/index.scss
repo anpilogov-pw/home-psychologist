@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.text-logo {
+		@apply text-[1.25rem] md:text-[1.625rem] 3xl:text-[2rem] font-medium;
+	}
+
+	.no-scroll {
+		@apply overflow-hidden;
+	}
+}
+
+@layer base {
+	html {
+		font-family: "Inter", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+	}
+}
+
+@theme {
+	--breakpoint-3xl: 90rem;
+}
+
+@import "./header.scss";
+@import "./logo.scss";
+@import "./nav.scss";
