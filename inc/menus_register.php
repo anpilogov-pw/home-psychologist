@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 function header_menus_register()
 {
 	register_nav_menus(array(

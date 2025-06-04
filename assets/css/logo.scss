@@ -1,0 +1,15 @@
+.hp-logo {
+	@apply flex flex-none items-center;
+}
+
+.hp-logo__page {
+	@apply flex flex-none flex-row items-center text-emerald-700;
+}
+
+.hp-logo__page-main {
+	@apply flex flex-none flex-row items-center text-gray-800 hover:text-emerald-700 focus:text-emerald-700 transition-colors;
+}
+
+.hp-logo__icon {
+	@apply h-auto w-[2.625rem] md:w-[3.25rem] 3xl:w-[4rem];
+}
