@@ -1,4 +1,7 @@
 {
 	"logo.title": "Home Психолог",
-	"menu.button.aria-label": "Открыть меню"
+	"menu.button.aria-label": "Открыть меню",
+	"ui.button.title": "Кнопка",
+	"ui.button.aria-label": "Кнопка",
+	"tax.button.title": "Все рубрики"
 }

@@ -27,6 +27,11 @@
 	--breakpoint-3xl: 90rem;
 }
 
+@import "./layout.scss";
+
+@import './components/index.scss';
+
 @import "./header.scss";
 @import "./logo.scss";
 @import "./nav.scss";
+@import './taxonomy-list.scss';
