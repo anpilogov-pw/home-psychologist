@@ -1,0 +1,11 @@
+.hp-offer-block {
+	@apply py-[4.5rem] bg-[#15803D] bg-cover bg-center bg-no-repeat;
+}
+
+.hp-offer-block__warapper {
+	@apply flex flex-none flex-col md:flex-row gap-[2rem] md:gap-[6rem] 3xl:gap-[10rem] items-center justify-between;
+}
+
+.hp-offer-block__text {
+	@apply text-center md:text-left text-[1.375rem] md:text-[1.875rem] 3xl:text-[2.25rem] text-white font-medium;
+}

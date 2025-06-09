@@ -1,3 +1,28 @@
+<style>
+	.a-hp-taxonomies-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 12px;
+		padding: 12px;
+		border-radius: 8px;
+		background: #FAFAFA;
+	}
+
+	.a-hp-taxonomies-list__item {
+		background: #F0F0F0;
+		padding: 4px 12px;
+		border-radius: 4px;
+	}
+
+	.a-hp-taxonomies-list__item a {
+		text-decoration: none;
+		color: black;
+		pointer-events: none;
+	}
+</style>
+
+
 <?php
 $tax_type = isset($attributes['hp-tax-type']) ? sanitize_text_field($attributes['hp-tax-type']) : 'category';
 $tax_count = isset($attributes['hp-tax-count']) ? intval($attributes['hp-tax-count']) : 0;
@@ -18,9 +43,9 @@ $terms = get_terms([
 
 if (!empty($terms) && !is_wp_error($terms)):
 	?>
-	<ul class="hp-taxonomy-list">
+	<div class="a-hp-taxonomies-list">
 		<?php foreach ($terms as $term): ?>
-			<li>
+			<div class="a-hp-taxonomies-list__item">
 				<?php
 				get_template_part('template-parts/components/link_button', null, [
 					'text' => $term->name,
@@ -28,17 +53,9 @@ if (!empty($terms) && !is_wp_error($terms)):
 					'class' => 'hp-button_gray',
 				]);
 				?>
-			</li>
+			</div>
 		<?php endforeach; ?>
-		<li>
-			<?php
-			get_template_part('template-parts/components/button', null, [
-				'text' => t('tax.button.title'),
-				'type' => 'button',
-			]);
-			?>
-		</li>
-	</ul>
+	</div>
 <?php else: ?>
 	<p>Таксономии не найдены.</p>
 <?php endif; ?>

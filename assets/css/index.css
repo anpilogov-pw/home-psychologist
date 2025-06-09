@@ -199,6 +199,9 @@
       max-width: 96rem;
     }
   }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
 }
 @layer utilities {
   .text-logo {
@@ -224,7 +227,7 @@
     font-style: normal;
   }
 }
-.hp-layout {
+.hp-block {
   margin: auto;
   width: 100%;
   padding-inline: calc(var(--spacing) * 3);
@@ -285,6 +288,16 @@
   }
   @media (width >= 90rem) {
     font-size: 1.25rem;
+  }
+}
+.hp-button__icon > svg {
+  height: 1.125rem;
+  width: 1.125rem;
+  @media (width >= 48rem) {
+    height: calc(var(--spacing) * 6);
+  }
+  @media (width >= 48rem) {
+    width: calc(var(--spacing) * 6);
   }
 }
 .hp-button_gray {
@@ -538,17 +551,59 @@
     display: none;
   }
 }
-.hp-taxonomy-list {
+.hp-taxonomies-list {
+  border-top-style: var(--tw-border-style);
+  border-top-width: 1px;
+  border-top-color: var(--color-emerald-800);
+}
+.hp-taxonomies-list__wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: calc(var(--spacing) * 3);
-  border-top-style: var(--tw-border-style);
-  border-top-width: 1px;
-  border-top-color: var(--color-emerald-800);
   padding-block: calc(var(--spacing) * 8);
   @media (width >= 48rem) {
     padding-block: calc(var(--spacing) * 16);
+  }
+}
+.hp-offer-block {
+  background-color: #15803D;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: 4.5rem;
+}
+.hp-offer-block__warapper {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  @media (width >= 48rem) {
+    flex-direction: row;
+  }
+  @media (width >= 48rem) {
+    gap: 6rem;
+  }
+  @media (width >= 90rem) {
+    gap: 10rem;
+  }
+}
+.hp-offer-block__text {
+  text-align: center;
+  font-size: 1.375rem;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  @media (width >= 48rem) {
+    text-align: left;
+  }
+  @media (width >= 48rem) {
+    font-size: 1.875rem;
+  }
+  @media (width >= 90rem) {
+    font-size: 2.25rem;
   }
 }
 @property --tw-font-weight {

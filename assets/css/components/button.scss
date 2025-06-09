@@ -26,6 +26,10 @@
 	transition-colors;
 }
 
+.hp-button__icon > svg {
+	@apply w-[1.125rem] h-[1.125rem] md:w-6 md:h-6;
+}
+
 .hp-button_gray {
 	@apply bg-gray-100 
 	hover:bg-gray-200 

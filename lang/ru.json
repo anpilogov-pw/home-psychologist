@@ -3,5 +3,7 @@
 	"menu.button.aria-label": "Открыть меню",
 	"ui.button.title": "Кнопка",
 	"ui.button.aria-label": "Кнопка",
-	"tax.button.title": "Все рубрики"
+	"tax.button.title": "Все рубрики",
+	"no-text": "Текст не был задан",
+	"no-tax": "Таксономии не найдены"
 }
