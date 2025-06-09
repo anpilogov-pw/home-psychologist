@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 // Кеш для переводов (чтобы не читать файл на каждый вызов)
 $translations_cache = [];
 

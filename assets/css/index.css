@@ -14,6 +14,7 @@
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-white: #fff;
@@ -21,6 +22,7 @@
     --container-xs: 20rem;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-sm: 0.25rem;
     --radius-xl: 0.75rem;
@@ -334,6 +336,50 @@
     background-color: var(--color-gray-50);
   }
 }
+.hp-breadcrumbs {
+  padding-block: calc(var(--spacing) * 3);
+  @media (width >= 48rem) {
+    padding-block: calc(var(--spacing) * 6);
+  }
+}
+.hp-breadcrumbs-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 3);
+  li {
+    position: relative;
+    font-size: 1.125rem;
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-500);
+    &:last-child {
+      --tw-font-weight: var(--font-weight-semibold);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-emerald-800);
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      background: url("/wp-content/themes/home-psychologist/assets/icons/chevron-right.svg")	no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-left: calc(var(--spacing) * 3);
+      height: 1.125rem;
+      width: 1.125rem;
+    }
+    &:last-child::after {
+      content: none;
+    }
+    & > a {
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+}
 .hp-header {
   position: sticky;
   top: calc(var(--spacing) * 0);
@@ -512,6 +558,12 @@
     font-weight: var(--font-weight-bold);
     color: var(--color-emerald-700);
   }
+  .current-menu-item > a {
+    background-color: var(--color-emerald-100);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-emerald-700);
+  }
 }
 .hp-menu-button {
   display: block;
@@ -545,12 +597,12 @@
     display: none;
   }
 }
-.hp-menu-button[data-checked=false] {
+.hp-menu-button[data-checked="false"] {
   .hp-menu-button__icon:last-child {
     display: none;
   }
 }
-.hp-menu-button[data-checked=true] {
+.hp-menu-button[data-checked="true"] {
   .hp-menu-button__icon:first-child {
     display: none;
   }
@@ -609,6 +661,51 @@
   @media (width >= 90rem) {
     font-size: 2.25rem;
   }
+}
+.hp-about {
+  max-width: 53.5rem;
+  padding-block: calc(var(--spacing) * 8);
+  font-size: 1rem;
+  color: var(--color-gray-900);
+  @media (width >= 48rem) {
+    font-size: 1.125rem;
+  }
+  @media (width >= 90rem) {
+    padding-block: calc(var(--spacing) * 16);
+  }
+  p:not(:last-child) {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+}
+.hp-org-contacts {
+  margin-top: calc(var(--spacing) * 3);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 3);
+  @media (width >= 48rem) {
+    margin-top: calc(var(--spacing) * 8);
+  }
+}
+.hp-org-contacts__title {
+  font-size: 1.25rem;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  @media (width >= 48rem) {
+    font-size: 1.5rem;
+  }
+}
+.hp-org-contacts__address {
+  font-size: 1rem;
+  color: var(--color-gray-800);
+  @media (width >= 48rem) {
+    font-size: 1.25rem;
+  }
+}
+.hp-org-contacts__address a {
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-emerald-800);
+  text-decoration-line: underline;
 }
 .hp-footer {
   border-top-style: var(--tw-border-style);

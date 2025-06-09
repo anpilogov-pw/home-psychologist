@@ -55,19 +55,23 @@
 	.current_page_item > a {
 		@apply font-bold bg-emerald-100 text-emerald-700;
 	}
+
+	.current-menu-item > a {
+		@apply font-bold bg-emerald-100 text-emerald-700;
+	}
 }
 
 .hp-menu-button {
 	@apply block 3xl:hidden w-8 h-8 p-1 md:w-12 md:h-12 md:p-3 rounded-sm md:rounded-xl bg-gray-50 hover:bg-gray-100 focus:bg-gray-100 cursor-pointer;
 }
 
-.hp-menu-button[data-checked=false] {
+.hp-menu-button[data-checked="false"] {
 	.hp-menu-button__icon:last-child {
 		@apply hidden;
 	}
 }
 
-.hp-menu-button[data-checked=true] {
+.hp-menu-button[data-checked="true"] {
 	.hp-menu-button__icon:first-child {
 		@apply hidden;
 	}

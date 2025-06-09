@@ -1,0 +1,33 @@
+.hp-breadcrumbs {
+	@apply py-3 md:py-6;
+}
+
+.hp-breadcrumbs-list {
+	@apply flex flex-row flex-wrap gap-3;
+
+	li {
+		@apply relative text-gray-500 font-medium text-[1.125rem];
+
+		&:last-child {
+			@apply text-emerald-800 font-semibold;
+		}
+
+		&::after {
+			content: "";
+			display: inline-block;
+			background: url("/wp-content/themes/home-psychologist/assets/icons/chevron-right.svg")
+				no-repeat center;
+			background-size: contain;
+			vertical-align: middle;
+			@apply w-[1.125rem] h-[1.125rem] ml-3;
+		}
+
+		&:last-child::after {
+			content: none;
+		}
+
+		& > a {
+			@apply hover:underline;
+		}
+	}
+}

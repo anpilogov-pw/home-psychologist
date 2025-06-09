@@ -1,0 +1,15 @@
+.hp-org-contacts {
+	@apply flex flex-col gap-3 mt-3 md:mt-8;
+}
+
+.hp-org-contacts__title {
+	@apply text-[1.25rem] md:text-[1.5rem] font-medium;
+}
+
+.hp-org-contacts__address {
+	@apply text-[1rem] md:text-[1.25rem] text-gray-800;
+}
+
+.hp-org-contacts__address a {
+	@apply font-medium underline text-emerald-800;
+}

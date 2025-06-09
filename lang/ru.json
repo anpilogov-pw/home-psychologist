@@ -12,5 +12,6 @@
 	"menu.footer.docs": "Меню в подвале (документы)",
 	"menu.footer.pages": "Страницы",
 	"menu.footer.taxes": "Рубрики",
-	"menu.footer.info": "Информация"
+	"menu.footer.info": "Информация",
+	"breadcrumbs.home.title": "Главная"
 }

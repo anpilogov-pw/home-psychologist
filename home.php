@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="hp-main post-category">
+<main class="hp-main post-archive">
 	<?php breadcrumbs(); ?>
 	<?php
 	if (have_posts()):
