@@ -4,10 +4,18 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-function header_menus_register()
+/**
+ * Регистрирует все меню в теме.
+ */
+function register_theme_menus()
 {
-	register_nav_menus(array(
-		'header' => 'Меню в шапке'
-	));
+	$menus = [
+		'header' => t('menu.header'),
+		'footer' => t('menu.footer'),
+		'footer_tax' => t('menu.footer.tax'),
+		'footer_docs' => t('menu.footer.docs'),
+	];
+
+	register_nav_menus($menus);
 }
-add_action('after_setup_theme', 'header_menus_register');
+add_action('after_setup_theme', 'register_theme_menus');

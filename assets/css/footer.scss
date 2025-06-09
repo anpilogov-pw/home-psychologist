@@ -6,10 +6,11 @@
 	@apply flex 
 	flex-nowrap
 	flex-col
-	md:flex-row
+	3xl:flex-row
 	items-start
-	md:items-center
 	justify-between
+	gap-[2.625rem]
+	md:gap-[4rem]
 	w-full
 	3xl:max-w-[90rem]
 	px-3
@@ -38,4 +39,36 @@
 
 .hp-organization-address a {
 	@apply text-[1rem] text-[#858585] hover:underline focus:underline;
+}
+
+.hp-footer-menu {
+	@apply flex 
+	flex-none 
+	flex-col 
+	items-start 
+	md:flex-row 
+	w-fit
+	gap-10 
+	md:gap-[5.625rem]
+	3xl:gap-[6.25rem];
+}
+
+.hp-footer-menu__item {
+	@apply flex flex-col gap-5;
+}
+
+.hp-footer-menu__title {
+	@apply text-[1.125rem] text-gray-900 font-medium;
+}
+
+.hp-footer-menu-list {
+	@apply flex flex-col gap-3;
+
+	.menu-item {
+		@apply text-[1rem] text-gray-900 hover:text-emerald-800 focus:text-emerald-800;
+
+		&.current_page_item {
+			@apply text-emerald-800 underline;
+		}
+	}
 }

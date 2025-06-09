@@ -5,5 +5,12 @@
 	"ui.button.aria-label": "Кнопка",
 	"tax.button.title": "Все рубрики",
 	"no-text": "Текст не был задан",
-	"no-tax": "Таксономии не найдены"
+	"no-tax": "Таксономии не найдены",
+	"menu.footer": "Меню в подвале",
+	"menu.header": "Меню в шапке",
+	"menu.footer.tax": "Меню в подвале (рубрики)",
+	"menu.footer.docs": "Меню в подвале (документы)",
+	"menu.footer.pages": "Страницы",
+	"menu.footer.taxes": "Рубрики",
+	"menu.footer.info": "Информация"
 }
