@@ -23,12 +23,12 @@ $class_attr = 'hp-button ' . esc_attr($class);
 ?>
 
 <a <?= $id_attr ?> <?= $href_attr ?> class="<?= $class_attr ?>">
-	<?php if ($icon): ?>
-		<span class="hp-button__text">
-			<?= $icon ?>
-		</span>
-	<?php endif; ?>
 	<span class="hp-button__text">
 		<?= $button_text ?>
 	</span>
+	<?php if ($icon): ?>
+		<span class="hp-button__icon">
+			<?= $icon ?>
+		</span>
+	<?php endif; ?>
 </a>

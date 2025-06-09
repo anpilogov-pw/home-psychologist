@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="hp-layout">
+<main class="hp-main">
 	<?php
 	if (have_posts()):
 		while (have_posts()):
