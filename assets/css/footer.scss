@@ -1,0 +1,41 @@
+.hp-footer {
+	@apply border-t-1 border-t-[#E4E4E4];
+}
+
+.hp-footer__container {
+	@apply flex 
+	flex-nowrap
+	flex-col
+	md:flex-row
+	items-start
+	md:items-center
+	justify-between
+	w-full
+	3xl:max-w-[90rem]
+	px-3
+	md:px-[2.25rem]
+	3xl:px-[4.5rem]
+	py-[2rem]
+	3xl:py-[4rem]
+	m-auto;
+}
+
+.hp-about-organization {
+	@apply flex flex-col gap-3;
+}
+
+.hp-about-organization__copyrigh {
+	@apply flex flex-col;
+}
+
+.hp-copyright {
+	@apply text-[1rem] text-[#858585];
+}
+
+.hp-organization-address {
+	@apply mt-3;
+}
+
+.hp-organization-address a {
+	@apply text-[1rem] text-[#858585] hover:underline focus:underline;
+}
