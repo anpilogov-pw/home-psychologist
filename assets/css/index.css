@@ -776,6 +776,9 @@
 }
 .hp-page-header {
   min-height: 19.375rem;
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 1px;
+  border-color: var(--color-emerald-800);
   background-color: var(--color-white);
   background-size: cover;
   background-position: center;
@@ -820,6 +823,62 @@
 }
 .hp-page-header__search {
   margin-top: calc(var(--spacing) * 8);
+}
+.hp-articles-block {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 8);
+  background-color: var(--color-gray-50);
+  padding-block: 5.125rem;
+  @media (width >= 90rem) {
+    padding-block: calc(var(--spacing) * 16);
+  }
+}
+.hp-articles-block__wrapper {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 8);
+}
+.hp-articles-block__hgroup {
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.hp-articles-block__title {
+  font-size: 1.75rem;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  text-wrap: balance;
+  color: var(--color-gray-800);
+  @media (width >= 48rem) {
+    font-size: 2.25rem;
+  }
+  @media (width >= 90rem) {
+    font-size: 2.5rem;
+  }
+}
+.hp-articles-block__actions {
+  @media (width < 48rem) {
+    position: absolute;
+  }
+  @media (width < 48rem) {
+    bottom: calc(var(--spacing) * 8);
+  }
+  @media (width < 48rem) {
+    left: 50%;
+  }
+  @media (width < 48rem) {
+    --tw-translate-x: calc(50% * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  @media (width >= 48rem) {
+    position: static;
+  }
 }
 .hp-footer {
   border-top-style: var(--tw-border-style);
@@ -1011,6 +1070,21 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -1031,6 +1105,9 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
     }
   }
 }

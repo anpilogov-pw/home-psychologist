@@ -24,5 +24,7 @@
 	"search.title.experts": "Найди своего эксперта",
 	"search.title.post": "Поиск по названию",
 	"search.result.title": "Результаты поиска",
-	"search.result.text": "Результаты поиска по вашему запросу"
+	"search.result.text": "Результаты поиска по вашему запросу",
+	"page.articles.block.title.populars": "Популярные статьи",
+	"page.articles.block.link.title": "Все статьи"
 }

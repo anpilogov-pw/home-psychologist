@@ -8,6 +8,7 @@ require_once get_template_directory() . '/inc/manage-hp-authors-posts-columns.ph
 require_once get_template_directory() . '/inc/manage-hp-experts-posts-columns.php';
 require_once get_template_directory() . '/inc/breadcrumbs.php';
 require_once get_template_directory() . '/inc/slim_seo.php';
+require_once get_template_directory() . '/inc/shortcodes.php';
 
 function theme_setup()
 {
