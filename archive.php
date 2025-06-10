@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main class="hp-main hp-main_archive">
+	<?php get_template_part('template-parts/page/page-header'); ?>
 	<?php breadcrumbs(); ?>
 	<?php
 	if (have_posts()):

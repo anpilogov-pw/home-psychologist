@@ -13,5 +13,7 @@
 	"menu.footer.pages": "Страницы",
 	"menu.footer.taxes": "Рубрики",
 	"menu.footer.info": "Информация",
-	"breadcrumbs.home.title": "Главная"
+	"breadcrumbs.home.title": "Главная",
+	"page.title.our": "Наши",
+	"page.title.blog": "Блог"
 }

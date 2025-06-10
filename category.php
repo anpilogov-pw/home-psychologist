@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main class="hp-main post-category">
+	<?php get_template_part('template-parts/page/page-header'); ?>
 	<?php breadcrumbs(); ?>
 	<?php
 	if (have_posts()):

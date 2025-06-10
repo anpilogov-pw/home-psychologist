@@ -1,0 +1,23 @@
+.hp-page-header {
+	@apply bg-white 
+	bg-cover 
+	bg-center 
+	bg-no-repeat
+	min-h-[19.375rem]
+	md:min-h-[21.875rem]
+	py-8
+	md:py-[2.625rem]
+	3xl:py-16;
+}
+
+.hp-page-header__hgroup {
+	@apply flex flex-col gap-6;
+}
+
+.hp-page-header__title {
+	@apply text-balance text-[2rem] md:text-[2.625rem] 3xl:text-[3rem] text-gray-800 font-bold;
+}
+
+.hp-page-header__description {
+	@apply text-balance text-[0.875rem] md:text-[1.125rem] text-gray-800 max-w-[46.5rem];
+}

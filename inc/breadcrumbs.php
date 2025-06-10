@@ -32,8 +32,8 @@ function breadcrumbs()
 			$title = get_the_title($page_for_posts_id);
 			$link = get_permalink($page_for_posts_id);
 		} else {
-			$title = 'Блог';
-			$link = home_url('/'); // fallback
+			$title = t('page.title.blog');
+			$link = home_url('/');
 		}
 
 		$breadcrumbs .= '<li>' . esc_html($title) . '</li>';
