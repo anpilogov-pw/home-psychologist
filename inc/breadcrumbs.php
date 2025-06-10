@@ -76,7 +76,7 @@ function breadcrumbs()
 		);
 	} elseif (is_category()) {
 		// Если это 
-		
+
 		// Страница блога
 		$page_for_posts_id = get_option('page_for_posts');
 		if ($page_for_posts_id) {
@@ -93,14 +93,26 @@ function breadcrumbs()
 		}
 
 		// Текущая категория
-		$category = get_queried_object();
-		$breadcrumbs .= '<li>' . esc_html($category->name) . '</li>';
-		$breadcrumb_json[] = [
-			"@type" => "ListItem",
-			"position" => 3,
-			"name" => $category->name,
-			"item" => get_category_link($category->term_id)
-		];
+		if (is_search()) {
+			$category = get_queried_object();
+			$breadcrumbs .= '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
+			$breadcrumb_json[] = [
+				"@type" => "ListItem",
+				"position" => 3,
+				"name" => $category->name,
+				"item" => get_category_link($category->term_id)
+			];
+		} else {
+			$category = get_queried_object();
+			$breadcrumbs .= '<li>' . esc_html($category->name) . '</li>';
+			$breadcrumb_json[] = [
+				"@type" => "ListItem",
+				"position" => 3,
+				"name" => $category->name,
+				"item" => get_category_link($category->term_id)
+			];
+		}
+
 	} elseif (is_tag()) {
 		// Если это тег
 		$breadcrumbs .= '<li>' . urldecode(single_tag_title('', false)) . '</li>';
@@ -119,6 +131,21 @@ function breadcrumbs()
 			"name" => urldecode(post_type_archive_title('', false)),
 			"item" => urldecode(get_post_type_archive_link(get_post_type()))
 		);
+	}
+
+	if (is_search()) {
+		// Если это поиск
+		$search_query = get_search_query();
+		$search_url = get_search_link($search_query);
+		if (!empty($search_url)) {
+			$breadcrumbs .= '<li>' . t('breadcrumbs.searchform.title') . ": " . get_search_query() . '</li>';
+			$breadcrumb_json[] = array(
+				"@type" => "ListItem",
+				"position" => 3,
+				"name" => t('breadcrumbs.searchform.title') . ": " . get_search_query(),
+				"item" => urldecode($search_url)
+			);
+		}
 	}
 
 	// Закрытие списка

@@ -31,4 +31,7 @@ $image_url = get_template_directory_uri() . '/assets/img/laptop-page-header-patt
 			<?php echo $meta_description; ?>
 		</p>
 	</hgroup>
+	<div class="hp-block hp-page-header__search">
+		<?php get_search_form(); ?>
+	</div>
 </section>

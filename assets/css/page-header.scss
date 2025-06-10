@@ -21,3 +21,7 @@
 .hp-page-header__description {
 	@apply text-balance text-[0.875rem] md:text-[1.125rem] text-gray-800 max-w-[46.5rem];
 }
+
+.hp-page-header__search {
+	@apply mt-8;
+}

@@ -15,5 +15,11 @@
 	"menu.footer.info": "Информация",
 	"breadcrumbs.home.title": "Главная",
 	"page.title.our": "Наши",
-	"page.title.blog": "Блог"
+	"page.title.blog": "Блог",
+	"breadcrumbs.searchform.title": "Поиск",
+	"search.title": "Поиск",
+	"search.title.books": "Поиск по названию",
+	"search.title.authors": "Найди своего автора",
+	"search.title.experts": "Найди своего эксперта",
+	"search.title.post": "Поиск по названию"
 }
