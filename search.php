@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="hp-main post-category">
+<main class="hp-main hp-search">
 	<?php get_template_part('template-parts/page/page-header'); ?>
 	<?php breadcrumbs(); ?>
 	<?php

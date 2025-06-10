@@ -46,8 +46,7 @@ if ($current_post_type === 'post') {
 
 <form role="search" method="get" class="hp-search-form" action="<?php echo esc_url(home_url('/')); ?>">
 	<label for="hp-search-input" class="hp-search-field-label">
-		<input id="hp-search-input" type="search" class="hp-search-field" placeholder="<?php echo $current_input_text; ?>"
-			value="<?php echo get_search_query(); ?>" name="s" />
+		<input id="hp-search-input" type="search" class="hp-search-field" placeholder="<?php echo $current_input_text; ?>" value="<?php echo get_search_query(); ?>" name="s" required />
 	</label>
 
 	<?php if (!empty($current_post_type)): ?>

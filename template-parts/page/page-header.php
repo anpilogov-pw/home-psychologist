@@ -23,15 +23,31 @@ $image_url = get_template_directory_uri() . '/assets/img/laptop-page-header-patt
 ?>
 
 <section class="hp-page-header" style="background-image: url('<?php echo $image_url; ?>');">
-	<hgroup class="hp-block hp-page-header__hgroup">
-		<h1 class="hp-page-header__title">
-			<?php echo $page_title; ?>
-		</h1>
-		<p class="hp-page-header__description">
-			<?php echo $meta_description; ?>
-		</p>
-	</hgroup>
-	<div class="hp-block hp-page-header__search">
-		<?php get_search_form(); ?>
-	</div>
+	<?php if (!is_search()): ?>
+		<hgroup class="hp-block hp-page-header__hgroup">
+			<h1 class="hp-page-header__title">
+				<?php echo $page_title; ?>
+			</h1>
+			<p class="hp-page-header__description">
+				<?php echo $meta_description; ?>
+			</p>
+		</hgroup>
+	<?php endif; ?>
+
+	<?php if (is_search()): ?>
+		<hgroup class="hp-block hp-page-header__hgroup">
+			<h1 class="hp-page-header__title">
+				<?php echo t('search.result.title'); ?>
+			</h1>
+			<p class="hp-page-header__description">
+				<?php echo t('search.result.text'); ?>: <?php echo get_search_query(); ?>
+			</p>
+		</hgroup>
+	<?php endif; ?>
+
+	<?php if (is_category() || is_archive() || is_home()): ?>
+		<div class="hp-block hp-page-header__search">
+			<?php get_search_form(); ?>
+		</div>
+	<?php endif; ?>
 </section>
