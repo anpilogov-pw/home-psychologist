@@ -31,7 +31,7 @@ $limit = $args['limit'] ?? 6;
 					get_template_part('template-parts/components/link_button', null, [
 						'text' => $link_text,
 						'href' => $link,
-						'class' => '',
+						'class' => 'hp-button_outline',
 						'icon' => file_get_contents(get_template_directory() . '/assets/icons/arrow-right.svg'),
 					]);
 					?>
