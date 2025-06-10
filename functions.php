@@ -1,12 +1,13 @@
 <?php
 
-require_once get_template_directory() . '/inc/init_fonts.php';
-require_once get_template_directory() . '/inc/init_functions.php';
+require_once get_template_directory() . '/inc/init.php';
+require_once get_template_directory() . '/inc/fonts.php';
 require_once get_template_directory() . '/inc/i18n.php';
 require_once get_template_directory() . '/inc/menus_register.php';
 require_once get_template_directory() . '/inc/manage-hp-authors-posts-columns.php';
 require_once get_template_directory() . '/inc/manage-hp-experts-posts-columns.php';
 require_once get_template_directory() . '/inc/breadcrumbs.php';
+require_once get_template_directory() . '/inc/slim_seo.php';
 
 function theme_setup()
 {

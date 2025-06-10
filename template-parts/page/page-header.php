@@ -1,12 +1,15 @@
 <?php
 $full_seo_title = wp_get_document_title();
-$dash_position = strpos($full_seo_title, '—');
+$decoded_title = html_entity_decode($full_seo_title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+$separator = '—';
+$dash_position = mb_strpos($decoded_title, $separator, 0, 'UTF-8');
 
 if ($dash_position !== false) {
-	$page_title = substr($full_seo_title, 0, $dash_position);
+	$page_title = mb_substr($decoded_title, 0, $dash_position, 'UTF-8');
 	$page_title = trim($page_title);
 } else {
-	$page_title = $full_seo_title;
+	$page_title = $decoded_title;
 }
 
 ob_start();
@@ -45,7 +48,7 @@ $image_url = get_template_directory_uri() . '/assets/img/laptop-page-header-patt
 		</hgroup>
 	<?php endif; ?>
 
-	<?php if (is_category() || is_archive() || is_home()): ?>
+	<?php if (is_category() || is_archive() || is_home() || is_search()): ?>
 		<div class="hp-block hp-page-header__search">
 			<?php get_search_form(); ?>
 		</div>
