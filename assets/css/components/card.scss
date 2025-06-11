@@ -1,0 +1,64 @@
+.hp-card {
+	@apply flex flex-none flex-col p-5 rounded-xl border-1 border-gray-200 w-full bg-white;
+	@apply md:rounded-2xl;
+	@apply 3xl:max-w-[26rem];
+	@apply transition-all duration-300 ease-out shadow-none transform hover:-translate-y-2 hover:scale-101 focus-within:-translate-y-2 focus-within:scale-101;
+
+	&:hover {
+		box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+			0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+			0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	}
+
+	&:focus-within {
+		box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+			0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+			0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	}
+}
+
+.hp-article-image {
+	@apply rounded-lg;
+}
+
+.hp-article-image__img {
+	@apply w-full h-full max-h-[11.688rem] aspect-video object-cover object-center overflow-hidden rounded-lg;
+	@apply md:rounded-xl;
+}
+
+.hp-card-header {
+	@apply flex flex-none flex-col gap-1 mt-6;
+}
+
+.hp-card-title {
+	@apply text-[1.25rem] text-gray-800 font-medium leading-[140%];
+}
+
+.hp-card-authors {
+	@apply text-[0.875rem] text-gray-500 leading-[120%];
+}
+
+.hp-card-authors a {
+	@apply hover:underline focus:underline hover:text-emerald-700 focus:text-emerald-700 transition-colors;
+}
+
+.hp-card-excerpt {
+	@apply line-clamp-5 h-full text-[1rem] text-gray-800 leading-[120%] mt-3;
+	@apply 3xl:line-clamp-4;
+}
+
+.hp-card-meta {
+	@apply text-[0.75rem] text-emerald-800 font-medium mt-3 leading-[100%];
+}
+
+.hp-card-date {
+	@apply text-nowrap;
+}
+
+.hp-card-cats {
+	@apply truncate;
+}
+
+.hp-card-cat-link {
+	@apply hover:underline focus:underline hover:text-emerald-700 focus:text-emerald-700 transition-colors;
+}
