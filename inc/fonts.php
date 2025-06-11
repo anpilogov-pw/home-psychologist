@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_script('google-fonts-preconnect', '', [], '', false);
 	add_filter('script_loader_tag', function ($tag, $handle) {

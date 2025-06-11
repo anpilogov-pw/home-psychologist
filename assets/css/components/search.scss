@@ -1,0 +1,19 @@
+.hp-search-form {
+	@apply flex flex-none flex-row items-center w-full max-w-[23.5rem] h-[2.625rem] border-1 border-gray-200 focus-within:border-gray-400 rounded-lg bg-white overflow-hidden transition-colors;
+}
+
+.hp-search-field-label {
+	@apply w-full h-full;
+}
+
+.hp-search-field {
+	@apply w-full h-full p-2.5 text-[1rem] text-gray-800 placeholder:text-gray-500 placeholder:italic;
+}
+
+.hp-search-field:focus {
+	outline: none;
+}
+
+.hp-search-submit {
+	@apply flex flex-none items-center justify-center w-[2.625rem] h-full bg-emerald-800 hover:bg-emerald-700 focus:bg-emerald-700 cursor-pointer transition-colors;
+}

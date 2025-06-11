@@ -1,0 +1,7 @@
+.hp-about {
+	@apply max-w-[53.5rem] text-[1rem] md:text-[1.125rem] text-gray-900 py-8 3xl:py-16;
+
+	p:not(:last-child) {
+		@apply mb-3;
+	}
+}

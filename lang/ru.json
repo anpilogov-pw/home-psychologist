@@ -1,4 +1,5 @@
 {
+	"title": "Home Психолог",
 	"logo.title": "Home Психолог",
 	"menu.button.aria-label": "Открыть меню",
 	"ui.button.title": "Кнопка",
@@ -12,5 +13,18 @@
 	"menu.footer.docs": "Меню в подвале (документы)",
 	"menu.footer.pages": "Страницы",
 	"menu.footer.taxes": "Рубрики",
-	"menu.footer.info": "Информация"
+	"menu.footer.info": "Информация",
+	"breadcrumbs.home.title": "Главная",
+	"page.title.our": "Наши",
+	"page.title.blog": "Блог",
+	"breadcrumbs.searchform.title": "Поиск",
+	"search.title": "Поиск",
+	"search.title.books": "Поиск по названию",
+	"search.title.authors": "Найди своего автора",
+	"search.title.experts": "Найди своего эксперта",
+	"search.title.post": "Поиск по названию",
+	"search.result.title": "Результаты поиска",
+	"search.result.text": "Результаты поиска по вашему запросу",
+	"page.articles.block.title.populars": "Популярные статьи",
+	"page.articles.block.link.title": "Все статьи"
 }

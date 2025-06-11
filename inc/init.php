@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('ABSPATH')) {
+	exit;
+}
+
 add_action('init', function () {
 	global $wp_post_types;
 
@@ -40,21 +44,4 @@ add_action('init', function () {
 
 	// Отключаем DNS prefetch на emoji CDN
 	add_filter('emoji_svg_url', '__return_false');
-
-	// Перерегистрируем стандартную таксономию "category"
-	unregister_taxonomy('category');
-	register_taxonomy('category', ['post'], [
-		'labels' => [
-			'name' => 'Рубрики',
-			'singular_name' => 'Рубрика',
-		],
-		'public' => true,
-		'hierarchical' => true,
-		'rewrite' => [
-			'slug' => 'blog',
-			'with_front' => false,
-		],
-		'show_ui' => true,
-		'show_in_rest' => true,
-	]);
 });
