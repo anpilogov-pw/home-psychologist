@@ -26,5 +26,6 @@
 	"search.result.title": "Результаты поиска",
 	"search.result.text": "Результаты поиска по вашему запросу",
 	"page.articles.block.title.populars": "Популярные статьи",
-	"page.articles.block.link.title": "Все статьи"
+	"page.articles.block.link.title": "Все статьи",
+	"sidebar.categories.title": "Рубрики"
 }

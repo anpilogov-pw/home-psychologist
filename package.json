@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./assets/css/index.scss -o ./assets/css/index.css",
-    "dev": "npx @tailwindcss/cli -i ./assets/css/index.scss -o ./assets/css/index.css --watch"
+    "build": "npx tailwindcss -i ./assets/css/index.scss -o ./index.css",
+    "dev": "npx tailwindcss -i ./assets/css/index.scss -o ./index.css --watch"
   },
   "keywords": [],
   "author": "",

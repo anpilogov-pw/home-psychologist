@@ -1,0 +1,15 @@
+.hp-categories-list {
+	@apply flex flex-row flex-wrap gap-3;
+}
+
+.hp-categories-nav {
+	@apply block;
+}
+
+.hp-categories-nav_hidden {
+	@apply max-3xl:hidden;
+}
+
+.hp-category-mobile-menu-button {
+	@apply invisible max-3xl:visible;
+}

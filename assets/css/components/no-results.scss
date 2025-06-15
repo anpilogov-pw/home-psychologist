@@ -1,0 +1,18 @@
+.hp-no-results {
+	@apply flex flex-col items-center gap-8 w-full p-8 text-gray-800 bg-gray-100 rounded-3xl col-span-full;
+	@apply 3xl:flex-row 3xl:py-16 3xl:px-10;
+}
+
+.hp-no-results__icon {
+	@apply text-gray-400;
+}
+
+.hp-no-results__title {
+ @apply text-balance text-[2rem] font-bold mb-2 text-center;
+ @apply md:text-[2rem] 3xl:text-left;
+}
+
+.hp-no-results__text {
+ @apply text-balance text-[0.875rem] text-gray-800 max-w-[46.5rem] text-center;
+ @apply md:text-[1.125rem] 3xl:text-left;
+}
