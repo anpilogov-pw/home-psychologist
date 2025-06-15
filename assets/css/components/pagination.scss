@@ -1,0 +1,36 @@
+.pagination {
+	@apply flex flex-col items-center py-3 px-2.5;
+	@apply 3xl:items-end;
+
+	.nav-links {
+		@apply flex flex-none flex-row items-center gap-2;
+
+		.page-numbers {
+			@apply flex 
+			flex-none 
+			flex-col 
+			items-center 
+			justify-center 
+			h-10 
+			w-10 
+			rounded-full 
+			bg-gray-100 
+			text-[1rem] 
+			text-gray-800 
+			leading-[100%]
+			hover:bg-gray-200
+			focus:bg-gray-200
+			transition-colors;
+			@apply md:h-12 md:w-12 md:text-[1.125rem];
+		}
+
+		.page-numbers.current {
+			@apply text-white bg-emerald-800 font-semibold;
+		}
+
+		.page-numbers > svg {
+			@apply h-4 w-4;
+			@apply md:h-4.5 md:w-4.5;
+		}
+	}
+}

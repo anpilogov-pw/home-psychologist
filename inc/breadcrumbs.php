@@ -3,159 +3,37 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-function breadcrumbs()
-{
+add_filter('rank_math/frontend/breadcrumb/html', function ($html) {
+		// Удалим внешний <nav>, если он есть
+		$html = preg_replace('~<nav[^>]*class="[^"]*rank-math-breadcrumb[^"]*"[^>]*>~', '', $html);
+		$html = str_replace('</nav>', '', $html);
 
-	// Получаем главную страницу сайта
-	$home_url = home_url();
+		// Заменим <span class="separator">...</span> на SVG-сепаратор
+		$html = preg_replace('~<span class="separator">.*?</span>~', '', $html);
 
-	// Старт хлебных крошек
-	$breadcrumbs = '<nav class="hp-block hp-breadcrumbs" aria-label="Навигация по страницам"><ul class="hp-breadcrumbs-list">';
-
-	// Массив для микроразметки JSON-LD
-	$breadcrumb_json = array();
-
-	// Главная страница
-	$breadcrumbs .= '<li><a href="' . $home_url . '">' . t('breadcrumbs.home.title') . '</a></li>';
-	$breadcrumb_json[] = array(
-		"@type" => "ListItem",
-		"position" => 1,
-		"name" => urldecode(get_bloginfo('name')),
-		"item" => $home_url
-	);
-
-	if (is_front_page()) {
-		return;
-	} elseif (is_home()) {
-		$page_for_posts_id = get_option('page_for_posts');
-		if ($page_for_posts_id) {
-			$title = get_the_title($page_for_posts_id);
-			$link = get_permalink($page_for_posts_id);
-		} else {
-			$title = t('page.title.blog');
-			$link = home_url('/');
-		}
-
-		$breadcrumbs .= '<li>' . esc_html($title) . '</li>';
-		$breadcrumb_json[] = [
-			"@type" => "ListItem",
-			"position" => 2,
-			"name" => $title,
-			"item" => $link
-		];
-	}
-
-	// Условие для разных типов страниц
-	if (is_single()) {
-		// Если это запись
-		$categories = get_the_category();
-		if ($categories) {
-			$breadcrumbs .= '<li><a href="' . urldecode(get_category_link($categories[0]->term_id)) . '">' . $categories[0]->name . '</a></li>';
-			$breadcrumb_json[] = array(
-				"@type" => "ListItem",
-				"position" => 2,
-				"name" => urldecode($categories[0]->name),
-				"item" => urldecode(get_category_link($categories[0]->term_id))
-			);
-		}
-		$breadcrumbs .= '<li>' . urldecode(get_the_title()) . '</li>';
-		$breadcrumb_json[] = array(
-			"@type" => "ListItem",
-			"position" => 3,
-			"name" => urldecode(get_the_title()),
-			"item" => urldecode(get_permalink())
+		// Обёртка <nav><ul>
+		$html = str_replace(
+				'<p>',
+				'<nav class="hp-block hp-breadcrumbs" aria-label="Навигация по страницам"><ul class="hp-breadcrumbs-list">',
+				$html
 		);
-	} elseif (is_page()) {
-		// Если это страница
-		$breadcrumbs .= '<li>' . urldecode(get_the_title()) . '</li>';
-		$breadcrumb_json[] = array(
-			"@type" => "ListItem",
-			"position" => 2,
-			"name" => urldecode(get_the_title()),
-			"item" => urldecode(get_permalink())
+		$html = str_replace('</p>', '</ul></nav>', $html);
+
+		// Оборачиваем <a> в <li>
+		$html = preg_replace('~<a (.*?)>(.*?)</a>~', '<li><a $1><span>$2</span></a></li>', $html);
+
+		// Последний элемент без ссылки — с заменой Page N на Страница N
+		$html = preg_replace_callback(
+			'~<span class="last">(.*?)</span>~',
+			function ($matches) {
+				$text = $matches[1];
+				if (preg_match('~^Page\s+(\d+)~i', $text, $m)) {
+					$text = 'Страница ' . $m[1];
+				}
+				return '<li><p class="hp-breadcrumb_last" title="' . esc_attr($text) . '">' . esc_html($text) . '</p></li>';
+			},
+			$html
 		);
-	} elseif (is_category()) {
-		// Если это 
 
-		// Страница блога
-		$page_for_posts_id = get_option('page_for_posts');
-		if ($page_for_posts_id) {
-			$blog_title = get_the_title($page_for_posts_id);
-			$blog_link = get_permalink($page_for_posts_id);
-
-			$breadcrumbs .= '<li><a href="' . esc_url($blog_link) . '">' . esc_html($blog_title) . '</a></li>';
-			$breadcrumb_json[] = [
-				"@type" => "ListItem",
-				"position" => 2,
-				"name" => $blog_title,
-				"item" => $blog_link
-			];
-		}
-
-		// Текущая категория
-		if (is_search()) {
-			$category = get_queried_object();
-			$breadcrumbs .= '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
-			$breadcrumb_json[] = [
-				"@type" => "ListItem",
-				"position" => 3,
-				"name" => $category->name,
-				"item" => get_category_link($category->term_id)
-			];
-		} else {
-			$category = get_queried_object();
-			$breadcrumbs .= '<li>' . esc_html($category->name) . '</li>';
-			$breadcrumb_json[] = [
-				"@type" => "ListItem",
-				"position" => 3,
-				"name" => $category->name,
-				"item" => get_category_link($category->term_id)
-			];
-		}
-
-	} elseif (is_tag()) {
-		// Если это тег
-		$breadcrumbs .= '<li>' . urldecode(single_tag_title('', false)) . '</li>';
-		$breadcrumb_json[] = array(
-			"@type" => "ListItem",
-			"position" => 2,
-			"name" => urldecode(single_tag_title('', false)),
-			"item" => urldecode(get_tag_link(get_queried_object_id()))
-		);
-	} elseif (is_archive()) {
-		// Если это архив
-		$breadcrumbs .= '<li>' . urldecode(post_type_archive_title('', false)) . '</li>';
-		$breadcrumb_json[] = array(
-			"@type" => "ListItem",
-			"position" => 2,
-			"name" => urldecode(post_type_archive_title('', false)),
-			"item" => urldecode(get_post_type_archive_link(get_post_type()))
-		);
-	}
-
-	if (is_search()) {
-		// Если это поиск
-		$search_query = get_search_query();
-		$search_url = get_search_link($search_query);
-		if (!empty($search_url)) {
-			$breadcrumbs .= '<li>' . t('breadcrumbs.searchform.title') . ": " . get_search_query() . '</li>';
-			$breadcrumb_json[] = array(
-				"@type" => "ListItem",
-				"position" => 3,
-				"name" => t('breadcrumbs.searchform.title') . ": " . get_search_query(),
-				"item" => urldecode($search_url)
-			);
-		}
-	}
-
-	// Закрытие списка
-	$breadcrumbs .= '</ul></nav>';
-
-	// Выводим JSON-LD разметку в <script> тегах
-	echo $breadcrumbs;
-	echo '<script type="application/ld+json">' . json_encode(array(
-		"@context" => "https://schema.org",
-		"@type" => "BreadcrumbList",
-		"itemListElement" => $breadcrumb_json
-	)) . '</script>';
-}
+		return $html;
+}, 10, 3);

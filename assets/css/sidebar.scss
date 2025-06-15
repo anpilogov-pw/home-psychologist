@@ -1,0 +1,9 @@
+.hp-aside {
+	@apply flex flex-none flex-row gap-3;
+	@apply 3xl:flex-col 3xl:gap-5;
+}
+
+.hp-aside__title {
+	@apply hidden text-gray-800 font-semibold;
+	@apply 3xl:block 3xl:text-[1.5rem];
+}

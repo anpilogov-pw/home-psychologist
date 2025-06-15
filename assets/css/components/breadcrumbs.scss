@@ -6,10 +6,14 @@
 	@apply flex flex-row flex-wrap gap-3;
 
 	li {
-		@apply relative text-gray-500 font-medium text-[1.125rem];
+		@apply relative text-gray-500 font-medium text-[1.125rem] text-nowrap;
 
 		&:last-child {
 			@apply text-emerald-800 font-semibold;
+
+			.hp-breadcrumb_last {
+				@apply block;
+			}
 		}
 
 		&::after {
@@ -30,4 +34,8 @@
 			@apply hover:underline;
 		}
 	}
+}
+
+.hp-breadcrumb_last {
+	@apply inline truncate max-w-96;
 }

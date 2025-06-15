@@ -45,3 +45,19 @@ add_action('init', function () {
 	// Отключаем DNS prefetch на emoji CDN
 	add_filter('emoji_svg_url', '__return_false');
 });
+
+add_action('init', function () {
+    $blog_base = trim(get_option('category_base')) ?: 'category';
+
+    register_taxonomy('category', 'post', [
+        'hierarchical' => true,
+        'public' => true,
+        'rewrite' => [
+            'slug' => 'blog',        // сюда указываем `blog` вместо `category`
+            'with_front' => false,   // отключаем дублирование `blog/blog`
+        ],
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'labels' => get_taxonomy('category')->labels,
+    ]);
+}, 11);

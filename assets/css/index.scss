@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 @layer utilities {
@@ -28,6 +27,7 @@
 }
 
 @import "./layout.scss";
+@import "./archive.scss";
 
 @import './components/index.scss';
 
@@ -40,6 +40,8 @@
 @import './org-contacts.scss';
 @import './page-header.scss';
 @import './articles-block.scss';
+@import './sidebar.scss';
+@import './posts.scss';
 
 
 @import "./footer.scss";

@@ -2,7 +2,7 @@
 $full_seo_title = wp_get_document_title();
 $decoded_title = html_entity_decode($full_seo_title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-$separator = '—';
+$separator = '|';
 $dash_position = mb_strpos($decoded_title, $separator, 0, 'UTF-8');
 
 if ($dash_position !== false) {

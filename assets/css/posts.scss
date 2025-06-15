@@ -1,0 +1,22 @@
+.hp-posts {
+}
+
+.hp-posts__header {
+	@apply mb-3;
+	@apply 3xl:mb-5;
+}
+
+.hp-posts__header, .hp-posts__nav {
+	@apply flex flex-row flex-wrap items-center gap-3;
+	@apply 3xl:justify-end;
+}
+
+.hp-posts__list {
+	@apply grid grid-cols-1 gap-3;
+	@apply md:grid-cols-2 md:gap-5;
+}
+
+.hp-posts__footer {
+	@apply mt-3;
+	@apply md:mt-8;
+}
