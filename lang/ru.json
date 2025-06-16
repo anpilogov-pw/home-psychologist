@@ -27,5 +27,12 @@
 	"search.result.text": "Результаты поиска по вашему запросу",
 	"page.articles.block.title.populars": "Популярные статьи",
 	"page.articles.block.link.title": "Все статьи",
-	"sidebar.categories.title": "Рубрики"
+	"sidebar.categories.title": "Рубрики",
+	"page.no-results.title": "Нет результатов...",
+	"page.no-results.text-1": "Повашему запросу не нашлось подходящих материалов.",
+	"page.no-results.text-2": "Попробуйте иначе написать запрос.",
+	"page.no-posts.title": "Тут скоро буду публикации",
+	"page.no-posts.text-1": "Здесь ещё нет публикаций, но мы активно над ними работаем.",
+	"page.no-posts.text-2": "Хотите предложить тему?",
+	"more": "Подробнее"
 }

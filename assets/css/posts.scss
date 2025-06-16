@@ -20,3 +20,13 @@
 	@apply mt-3;
 	@apply md:mt-8;
 }
+
+.hp-posts_persons .hp-posts__list {
+	@apply grid grid-cols-1 gap-3;
+	@apply md:grid-cols-2 md:gap-5;
+	@apply 3xl:grid-cols-4;
+}
+
+.hp-posts_persons .hp-posts__footer {
+	@apply col-span-full;
+}
