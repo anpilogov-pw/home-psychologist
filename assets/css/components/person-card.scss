@@ -1,0 +1,50 @@
+.hp-person-card {
+	@apply flex flex-none flex-col items-center p-5 rounded-xl border-1 border-gray-200 w-full bg-white;
+	@apply md:rounded-2xl;
+	@apply 3xl:max-w-[21rem];
+	@apply transition-all duration-300 ease-out shadow-none transform hover:-translate-y-1 hover:scale-100 focus-within:-translate-y-1 focus-within:scale-100;
+
+	&:hover {
+		box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+			0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+			0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	}
+
+	&:focus-within {
+		box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+			0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+			0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	}
+}
+
+.hp-person-avatar {
+	box-shadow: 0px 30px 8px 0px rgba(0, 0, 0, 0),
+		0px 19px 8px 0px rgba(0, 0, 0, 0.01), 0px 11px 6px 0px rgba(0, 0, 0, 0.05),
+		0px 5px 5px 0px rgba(0, 0, 0, 0.09), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+	@apply w-[10.75rem] h-[10.75rem] rounded-full overflow-hidden mb-6;
+}
+
+.hp-person-avatar__img {
+	@apply w-full h-full;
+}
+
+.hp-person-card-header {
+	@apply mb-6;
+}
+
+.hp-person-card-title {
+	@apply flex flex-col;
+}
+
+.hp-person-card-name {
+	@apply mb-1 text-[1.125rem] text-center font-medium leading-[100%] line-clamp-1;
+	@apply 3xl:mb-2 3xl:text-[1.5rem];
+}
+
+.hp-person-card-career {
+	@apply text-[1rem] text-center leading-[100%] line-clamp-1;
+}
+
+.hp-person-card-excerpt {
+	@apply min-h-13 mb-8 text-[0.875rem] leading-[120%] text-balance text-center line-clamp-3;
+}

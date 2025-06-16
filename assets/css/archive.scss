@@ -2,3 +2,9 @@
 	@apply grid grid-cols-1 gap-3 py-8;
 	@apply 3xl:grid-cols-[23.5rem_1fr] 3xl:gap-16 3xl:py-16;
 }
+
+.hp-archive_single {
+	@apply block py-8;
+	@apply md:py-8;
+	@apply 3xl:pt-16 3xl:pb-24;
+}

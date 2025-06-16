@@ -8,43 +8,18 @@ $offer_block_text_link = get_field('hp-offer-block-link-text', 'option');
 $offer_block_link = get_field('hp-offer-block-link', 'option');
 ?>
 
-<main class="hp-main hp-main_archive">
+<main class="hp-main hp-main_archive hp-main_person hp-main_authors">
 	<?php get_template_part('template-parts/page/page-header'); ?>
 	<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
 
 	<div class="hp-block">
-		<div class="hp-archive">
-			<?php get_sidebar(); ?>
-			<section class="hp-posts">
-				<?php if (have_posts()): ?>
-					<header class="hp-posts__header">
-						<nav class="hp-posts__nav">
-							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'DESC') ? '' : 'hp-button_gray';
-							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-date-desc',
-								'href' => '?orderby=date&order=DESC',
-								'text' => 'По новизне',
-								'class' => $is_active
-							]);
-							?>
-							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'ASC') ? '' : 'hp-button_gray';
-							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-comment-desc',
-								'href' => '?orderby=date&order=ASC',
-								'text' => 'По популярности',
-								'class' => $is_active
-							]);
-							?>
-						</nav>
-					</header>
-				<?php endif; ?>
+		<div class="hp-archive hp-archive_single">
+			<section class="hp-posts hp-posts_persons">
 				<div class="hp-posts__list">
 					<?php if (have_posts()):
 						while (have_posts()):
 							the_post(); ?>
-							<?php get_template_part('template-parts/components/article-card', null, ['post' => get_post()]); ?>
+							<?php get_template_part('template-parts/components/author-card', null, ['post' => get_post()]); ?>
 						<?php endwhile; else: ?>
 						<?php get_template_part('template-parts/page/page-no-posts'); ?>
 					<?php endif; ?>
@@ -63,6 +38,7 @@ $offer_block_link = get_field('hp-offer-block-link', 'option');
 			</section>
 		</div>
 	</div>
+
 
 	<?php if (($is_experts || $is_authors) && $show_offer_block): ?>
 		<?php

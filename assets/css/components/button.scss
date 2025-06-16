@@ -46,3 +46,14 @@
 	border-gray-100
 	font-normal;
 }
+
+.hp-button_hard-outline {
+	@apply bg-white 
+	hover:bg-gray-50 
+	focus:bg-gray-50 
+	text-gray-900 
+	border-1
+	border-gray-900
+	text-[1rem]
+	font-normal;
+}
