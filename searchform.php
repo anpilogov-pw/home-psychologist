@@ -1,6 +1,8 @@
 <?php
-$current_post_type = '';
-$current_cat_id = '';
+$current_post_type = isset($_GET['post_type']) ? $_GET['post_type'] : '';
+$current_cat_id = isset($_GET['cat']) ? $_GET['cat'] : '';
+$current_tax_id = isset($_GET['tax_id']) ? $_GET['tax_id'] : '';
+$current_tax_name = '';
 $current_input_text = '';
 
 if (is_singular()) {
@@ -13,18 +15,16 @@ if (is_singular()) {
 } elseif (is_category() || is_tag() || is_tax()) {
 	$queried_object = get_queried_object();
 	if ($queried_object && isset($queried_object->taxonomy)) {
-		$taxonomies = get_object_taxonomies(null, 'objects');
-		if (isset($taxonomies[$queried_object->taxonomy])) {
-			$linked_post_types = $taxonomies[$queried_object->taxonomy]->object_type;
-			if (count($linked_post_types) === 1) {
-				$current_post_type = $linked_post_types[0];
-			} else {
-				$current_post_type = 'post';
-			}
-		}
+    $current_tax_name = get_taxonomy($queried_object->taxonomy);
+    $linked_post_types = $current_tax_name->object_type;
+		$current_post_type = $linked_post_types[0];
 
 		if (is_category() && $queried_object && isset($queried_object->term_id)) {
 			$current_cat_id = $queried_object->term_id;
+		}
+
+		if (is_tax() && $queried_object && isset($queried_object->term_id)) {
+			$current_tax_id = $queried_object->term_id;
 		}
 	}
 } else {
@@ -55,6 +55,10 @@ if ($current_post_type === 'post') {
 
 	<?php if (!empty($current_cat_id)): ?>
 		<input type="hidden" name="cat" value="<?php echo esc_attr($current_cat_id); ?>" />
+	<?php endif; ?>
+
+	<?php if (!empty($current_tax_id)): ?>
+		<input type="hidden" name="tax_id" value="<?php echo esc_attr($current_tax_id); ?>" />
 	<?php endif; ?>
 
 	<button type="submit" class="hp-search-submit" aria-label="Искать">

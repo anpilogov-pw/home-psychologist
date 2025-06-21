@@ -4,7 +4,7 @@ add_filter('template_include', function($template) {
 		$post_type = get_query_var('post_type');
 
 		if (is_array($post_type)) {
-			$post_type = reset($post_type); // берем первый, если массив
+			$post_type = reset($post_type);
 		}
 
 		if ($post_type) {

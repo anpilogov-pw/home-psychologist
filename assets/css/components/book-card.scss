@@ -1,0 +1,77 @@
+.hp-book-card {
+	@apply flex flex-none flex-col items-start p-6 rounded-xl border-1 border-gray-200 w-full bg-white;
+	@apply md:rounded-2xl;
+	@apply 3xl:max-w-[26rem];
+	@apply transition-all duration-300 ease-out shadow-none transform hover:-translate-y-1 hover:scale-100 focus-within:-translate-y-1 focus-within:scale-100;
+
+	&:hover {
+		box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+			0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+			0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	}
+
+	&:focus-within {
+		box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+			0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+			0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	}
+}
+
+.hp-book-image {
+	box-shadow: 0px 30px 8px 0px rgba(0, 0, 0, 0),
+		0px 19px 8px 0px rgba(0, 0, 0, 0.01), 0px 11px 6px 0px rgba(0, 0, 0, 0.05),
+		0px 5px 5px 0px rgba(0, 0, 0, 0.09), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+	@apply relative w-[8.875rem] h-[12rem] rounded-xl mb-5 place-self-center;
+	@apply md:w-[10.313rem] md:h-[14rem];
+}
+
+.hp-book-image__img {
+	@apply w-full h-full rounded-xl object-cover object-center;
+}
+
+.hp-book-card-header {
+	@apply flex flex-col;
+}
+
+.hp-book-card-title {
+	@apply mb-1 text-[1.125rem] text-left font-medium leading-[120%] line-clamp-2;
+	@apply 3xl:mb-2 3xl:text-[1.25rem];
+}
+
+.hp-book-card-authors {
+	@apply text-[0.875rem] text-gray-500 leading-[120%];
+}
+
+.hp-book-card-authors a {
+	@apply hover:underline focus:underline hover:text-emerald-700 focus:text-emerald-700 transition-colors;
+}
+
+.hp-book-card-excerpt {
+	@apply line-clamp-5 text-[1rem] text-gray-800 leading-[120%] mt-3 mb-auto;
+	@apply 3xl:line-clamp-4;
+}
+
+.hp-book-card-meta {
+	@apply w-full text-wrap text-[0.75rem] text-emerald-800 font-medium mt-3 leading-[130%];
+}
+
+.hp-book-card-date {
+	@apply text-nowrap;
+}
+
+.hp-book-card-cats {
+	@apply w-full;
+}
+
+.hp-book-card-cat-link {
+	@apply hover:underline focus:underline hover:text-emerald-700 focus:text-emerald-700 transition-colors;
+}
+
+.hp-book-age {
+	@apply absolute top-0 right-0 flex items-center justify-center w-10.5 h-10.5 bg-red-500 rounded-full;
+	@apply -translate-y-2 translate-x-1/2;
+}
+
+.hp-book-age__text {
+	@apply text-white font-medium text-[1rem];
+}

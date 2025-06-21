@@ -43,7 +43,7 @@
 }
 
 .hp-card-excerpt {
-	@apply line-clamp-5 h-full text-[1rem] text-gray-800 leading-[120%] mt-3;
+	@apply line-clamp-5 text-[1rem] text-gray-800 leading-[120%] mt-3 mb-auto;
 	@apply 3xl:line-clamp-4;
 }
 

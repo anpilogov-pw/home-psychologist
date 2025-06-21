@@ -1,12 +1,4 @@
-<?php get_header();
-
-$is_experts = is_post_type_archive('hp_experts') || is_category('hp_experts');
-$is_authors = is_post_type_archive('hp_authors') || is_category('hp_authors');
-$show_offer_block = get_field('hp-show-offer-block', 'option');
-$offer_block_text = get_field('hp-offer-block-text', 'option');
-$offer_block_text_link = get_field('hp-offer-block-link-text', 'option');
-$offer_block_link = get_field('hp-offer-block-link', 'option');
-?>
+<?php get_header(); ?>
 
 <main class="hp-main hp-main_archive">
 	<?php get_template_part('template-parts/page/page-header'); ?>
@@ -14,26 +6,31 @@ $offer_block_link = get_field('hp-offer-block-link', 'option');
 
 	<div class="hp-block">
 		<div class="hp-archive">
-			<?php get_sidebar(); ?>
+			<?php 
+			/**
+			* Вызываем sidebar-book в шаблоне
+			*/
+			get_template_part('template-parts/aside/sidebar-book', null, []); 
+			?>
 			<section class="hp-posts">
 				<?php if (have_posts()): ?>
 					<header class="hp-posts__header">
 						<nav class="hp-posts__nav">
 							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'DESC') ? '' : 'hp-button_gray';
+							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'title' && $_GET['order'] == 'ASC') ? '' : 'hp-button_gray';
 							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-date-desc',
-								'href' => '?orderby=date&order=DESC',
-								'text' => 'По новизне',
+								'id' => 'hp-orderby-title-asc',
+								'href' => '?orderby=title&order=ASC',
+								'text' => 'А-Я',
 								'class' => $is_active
 							]);
 							?>
 							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'ASC') ? '' : 'hp-button_gray';
+							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'title' && $_GET['order'] == 'DESC') ? '' : 'hp-button_gray';
 							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-comment-desc',
-								'href' => '?orderby=date&order=ASC',
-								'text' => 'По популярности',
+								'id' => 'hp-orderby-title-decs',
+								'href' => '?orderby=title&order=DESC',
+								'text' => 'Я-А',
 								'class' => $is_active
 							]);
 							?>
@@ -44,7 +41,7 @@ $offer_block_link = get_field('hp-offer-block-link', 'option');
 					<?php if (have_posts()):
 						while (have_posts()):
 							the_post(); ?>
-							<?php get_template_part('template-parts/components/article-card', null, ['post' => get_post()]); ?>
+							<?php get_template_part('template-parts/components/book-card', null, ['post' => get_post()]); ?>
 						<?php endwhile; else: ?>
 						<?php get_template_part('template-parts/page/page-no-posts'); ?>
 					<?php endif; ?>
@@ -63,16 +60,8 @@ $offer_block_link = get_field('hp-offer-block-link', 'option');
 			</section>
 		</div>
 	</div>
-
-	<?php if (($is_experts || $is_authors) && $show_offer_block): ?>
-		<?php
-		get_template_part('template-parts/page/page-offer-block', null, [
-			'text' => $offer_block_text,
-			'link' => $offer_block_link,
-			'link_text' => $offer_block_text_link,
-		]);
-		?>
-	<?php endif; ?>
+	
+	<?php get_template_part('template-parts/page/page-seo-block'); ?>
 </main>
 
 <?php get_footer(); ?>

@@ -1,0 +1,30 @@
+.hp-seo-block {
+	border-top: 1px solid var(--emerald-700, #047857);
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	@apply min-h-[19.375rem] md:min-h-[21.875rem] px-3 md:px-[2.25rem] 3xl:px-[4.5rem] py-8 md:py-[7.75rem] 3xl:py-[11.938rem];
+}
+
+.hp-seo-block__hgroup {
+	@apply flex flex-col gap-6 text-white mb-12;
+}
+
+.hp-seo-block__title {
+	@apply text-[2rem] text-balance font-semibold;
+	@apply md:text-[2.625rem];
+	@apply 3xl:text-[3rem];
+}
+
+.hp-seo-block__text {
+	@apply text-[1rem] text-balance font-medium;
+	@apply md:text-[1.25rem];
+	@apply 3xl:text-[1.5rem];
+}
+
+
+.hp-seo-block__link {
+	@apply bg-white rounded-xl py-2.5 px-3 text-nowrap font-medium text-[1.125rem];
+	@apply md:text-[1.25rem] md:py-3 md:px-4;
+	@apply 3xl:text-[1.5rem];
+}
