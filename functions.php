@@ -5,6 +5,7 @@ require_once get_template_directory() . '/inc/template_include.php';
 require_once get_template_directory() . '/inc/fonts.php';
 require_once get_template_directory() . '/inc/i18n.php';
 require_once get_template_directory() . '/inc/menus_register.php';
+require_once get_template_directory() . '/inc/sidebars_register.php';
 require_once get_template_directory() . '/inc/manage-hp-authors-posts-columns.php';
 require_once get_template_directory() . '/inc/manage-hp-experts-posts-columns.php';
 require_once get_template_directory() . '/inc/breadcrumbs.php';

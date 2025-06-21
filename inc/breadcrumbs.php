@@ -3,6 +3,24 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
+add_filter('rank_math/frontend/breadcrumb/items', function ($crumbs) {
+    if (is_tax('hp_book_taxonomy')) {
+        foreach ($crumbs as $key => $crumb) {
+            if ('Категории' === $crumb[0]) {
+                $crumbs[$key] = [
+                    'Книги',
+                    get_post_type_archive_link('hp_books'),
+                    'hide_in_schema' => false,
+                ];
+                break;
+            }
+        }
+    }
+    return $crumbs;
+}, 10, 1);
+
+
+
 add_filter('rank_math/frontend/breadcrumb/html', function ($html) {
 		// Удалим внешний <nav>, если он есть
 		$html = preg_replace('~<nav[^>]*class="[^"]*rank-math-breadcrumb[^"]*"[^>]*>~', '', $html);

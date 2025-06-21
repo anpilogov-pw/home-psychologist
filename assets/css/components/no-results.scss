@@ -16,3 +16,7 @@
  @apply text-balance text-[0.875rem] text-gray-800 max-w-[46.5rem] text-center;
  @apply md:text-[1.125rem] 3xl:text-left;
 }
+
+.hp-no-results__text a {
+	@apply hover:underline focus:underline;
+}

@@ -12,11 +12,9 @@ $email = get_field('hp-org-email', 'option');
 		<p class="hp-no-results__text"><?php echo t('page.no-posts.text-1'); ?></p>
 		<p class="hp-no-results__text">
 			<?php echo t('page.no-posts.text-2'); ?>
-			<address class="hp-organization-address not-italic">
-				<a href="mailto:<?php echo esc_attr($email); ?>" class="">
-					<?php echo esc_html($email); ?>
-				</a>
-			</address>
+			<a href="mailto:<?php echo esc_attr($email); ?>" class="">
+				<?php echo esc_html($email); ?>
+			</a>
 		</p>
 	</hgroup>
 </section>

@@ -7,8 +7,8 @@ if (!defined('ABSPATH')) {
 /**
  * Регистрирует все меню в теме.
  */
-function register_theme_menus()
-{
+
+add_action('after_setup_theme', function() {
 	$menus = [
 		'header' => t('menu.header'),
 		'footer' => t('menu.footer'),
@@ -17,5 +17,4 @@ function register_theme_menus()
 	];
 
 	register_nav_menus($menus);
-}
-add_action('after_setup_theme', 'register_theme_menus');
+});

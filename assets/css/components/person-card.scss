@@ -25,7 +25,7 @@
 }
 
 .hp-person-avatar__img {
-	@apply w-full h-full;
+	@apply w-full h-full object-cover object-center;
 }
 
 .hp-person-card-header {

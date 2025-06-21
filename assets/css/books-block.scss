@@ -1,0 +1,19 @@
+.hp-books-block {
+	@apply relative flex flex-none flex-col gap-8 py-[5.125rem] 3xl:py-16 bg-gray-50;
+}
+
+.hp-books-block__wrapper {
+	@apply flex flex-none flex-col gap-8;
+}
+
+.hp-books-block__hgroup {
+	@apply flex flex-none flex-row items-center justify-between;
+}
+
+.hp-books-block__title {
+	@apply text-balance text-gray-800 text-[1.75rem] md:text-[2.25rem] 3xl:text-[2.5rem] font-bold;
+}
+
+.hp-books-block__actions {
+	@apply max-md:absolute max-md:left-[50%] max-md:bottom-8 max-md:-translate-x-[50%] md:static;
+}

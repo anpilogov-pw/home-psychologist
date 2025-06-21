@@ -66,22 +66,3 @@ add_action('manage_hp_experts_posts_custom_column', function ($column, $post_id)
 		}
 	}
 }, 10, 2);
-
-add_action('acf/save_post', function ($post_id) {
-	if (get_post_type($post_id) !== 'hp_experts' || is_numeric($post_id) === false) {
-		return;
-	}
-
-	$name = get_field('hp_expert_name', $post_id);
-	$secondname = get_field('hp_expert_secondname', $post_id);
-
-	if ($name) {
-		$new_title = trim("{$name} {$secondname}");
-		remove_action('acf/save_post', __FUNCTION__);
-		wp_update_post([
-			'ID' => $post_id,
-			'post_title' => sanitize_text_field($new_title),
-		]);
-		add_action('acf/save_post', __FUNCTION__);
-	}
-}, 20);
