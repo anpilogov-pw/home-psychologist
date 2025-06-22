@@ -2,6 +2,10 @@
 	@apply relative flex flex-none flex-col gap-8 py-[5.125rem] 3xl:py-16 bg-gray-50;
 }
 
+.hp-books-block_white {
+	@apply bg-white;
+}
+
 .hp-books-block__wrapper {
 	@apply flex flex-none flex-col gap-8;
 }
