@@ -5,6 +5,7 @@ $link = $attributes['hp-books-block-link'] ?? '/knigi/';
 $show_link = $attributes['hp-books-block-show-link'] ?? true;
 $order = $attributes['hp-books-block-order'] ?? 'R';
 $limit = $attributes['hp-books-block-limit'] ?? 6;
+$color_schema = $attributes['hp-books-block-color-schema'] ?? "white";
 
 get_template_part('template-parts/page/page-books-block', null, [
 	'title' => $title,
@@ -12,6 +13,7 @@ get_template_part('template-parts/page/page-books-block', null, [
 	'link' => $link,
 	'show_link' => $show_link,
 	'order' => $order,
-	'limit' => $limit
+	'limit' => $limit,
+	'color_schema' => $color_schema
 ]);
 ?>

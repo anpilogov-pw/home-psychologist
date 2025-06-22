@@ -154,3 +154,46 @@ add_filter('rewrite_rules_array', function($rules) {
     return $new_rules + $rules;
 });
 
+add_action('pre_get_posts', function ($query) {
+	if (!is_admin() && $query->is_main_query() && is_post_type_archive('hp_books')) {
+		if (isset($_GET['orderby']) && $_GET['orderby'] === 'rating') {
+			$order = (isset($_GET['order']) && strtoupper($_GET['order']) === 'ASC') ? 'ASC' : 'DESC';
+
+			$query->set('meta_query', [
+				'relation' => 'OR',
+				[
+					'key' => 'hp_book_ozon',
+					'compare' => 'EXISTS',
+				],
+				[
+					'key' => 'hp_book_wb',
+					'compare' => 'EXISTS',
+				]
+			]);
+
+			add_filter('posts_orderby', function ($orderby_sql) use ($order) {
+				global $wpdb;
+
+				// Используем CAST, чтобы суммы были числовыми
+				return "
+					( 
+						CAST( 
+							(SELECT meta_value FROM $wpdb->postmeta AS pm1 
+								WHERE pm1.post_id = $wpdb->posts.ID 
+								AND pm1.meta_key = 'hp_book_ozon' 
+								LIMIT 1
+							) AS DECIMAL(10,2)
+						) + 
+						CAST( 
+							(SELECT meta_value FROM $wpdb->postmeta AS pm2 
+								WHERE pm2.post_id = $wpdb->posts.ID 
+								AND pm2.meta_key = 'hp_book_wb' 
+								LIMIT 1
+							) AS DECIMAL(10,2)
+						)
+					) $order
+				";
+			});
+		}
+	}
+});

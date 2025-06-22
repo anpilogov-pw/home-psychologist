@@ -75,3 +75,22 @@
 .hp-book-age__text {
 	@apply text-white font-medium text-[1rem];
 }
+
+
+.hp-book-card_mini {
+	@apply max-w-[18.5rem];
+	@apply md:max-w-[21rem];
+	@apply 3xl:max-w-[18.5rem];
+}
+
+.hp-book-card_mini .hp-book-card-title {
+	@apply text-center;
+}
+
+.hp-book-card_mini .hp-book-card-authors {
+	@apply text-center;
+}
+
+.hp-book-card_mini .hp-book-image {
+	@apply 
+}

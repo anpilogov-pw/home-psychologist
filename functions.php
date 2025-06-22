@@ -7,10 +7,12 @@ require_once get_template_directory() . '/inc/i18n.php';
 require_once get_template_directory() . '/inc/menus_register.php';
 require_once get_template_directory() . '/inc/sidebars_register.php';
 require_once get_template_directory() . '/inc/manage-hp-authors-posts-columns.php';
+require_once get_template_directory() . '/inc/manage-hp-books-posts-columns.php';
 require_once get_template_directory() . '/inc/manage-hp-experts-posts-columns.php';
 require_once get_template_directory() . '/inc/breadcrumbs.php';
 require_once get_template_directory() . '/inc/rank_math.php';
 require_once get_template_directory() . '/inc/shortcodes.php';
+require_once get_template_directory() . '/inc/admin-notification.php';
 
 function theme_setup()
 {

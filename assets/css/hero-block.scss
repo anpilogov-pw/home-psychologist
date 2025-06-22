@@ -1,0 +1,27 @@
+.hp-hero {
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	@apply py-8 md:py-16;
+}
+
+.hp-hero__hgroup {
+	@apply max-w-[18.5rem] md:max-w-[43.5rem] 3xl:max-w-[52.188rem] m-auto;
+}
+
+.hp-hero__title {
+	@apply text-emerald-700 text-center text-balance text-[2rem] font-bold leading-[120%];
+	@apply md:text-[2.625rem];
+	@apply 3xl:text-[3rem];
+}
+
+.hp-hero__subtitle {
+	@apply text-gray-900 text-center text-pretty  text-[1rem] font-medium leading-[140%];
+	@apply md:text-[1.25rem];
+	@apply 3xl:text-[1.5rem];
+}
+
+.hp-hero__list {
+	@apply flex flex-row gap-5 justify-center overflow-x-auto -mx-3 py-3 pt-[3rem];
+	@apply md:mx-auto;
+}
