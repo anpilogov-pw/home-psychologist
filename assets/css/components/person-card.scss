@@ -37,12 +37,12 @@
 }
 
 .hp-person-card-name {
-	@apply mb-1 text-[1.125rem] text-center font-medium leading-[100%] line-clamp-1;
+	@apply mb-1 text-[1.125rem] text-center text-balance font-medium leading-[100%] line-clamp-1;
 	@apply 3xl:mb-2 3xl:text-[1.5rem];
 }
 
 .hp-person-card-career {
-	@apply text-[1rem] text-center leading-[100%] line-clamp-1;
+	@apply text-[1rem] text-center text-balance leading-[100%] line-clamp-1;
 }
 
 .hp-person-card-excerpt {

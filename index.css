@@ -303,6 +303,7 @@
   line-height: 100%;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
+  text-wrap: nowrap;
   color: var(--color-white);
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -608,6 +609,7 @@
   line-height: 140%;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
+  text-wrap: balance;
   color: var(--color-gray-800);
 }
 .hp-card-authors {
@@ -934,6 +936,7 @@
   line-height: 100%;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
+  text-wrap: balance;
   @media (width >= 90rem) {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -950,6 +953,7 @@
   font-size: 1rem;
   --tw-leading: 100%;
   line-height: 100%;
+  text-wrap: balance;
 }
 .hp-person-card-excerpt {
   margin-bottom: calc(var(--spacing) * 8);
@@ -1061,6 +1065,7 @@
   line-height: 120%;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
+  text-wrap: balance;
   @media (width >= 90rem) {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -1174,6 +1179,8 @@
   color: var(--color-white);
 }
 .hp-book-card_mini {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   max-width: 18.5rem;
   @media (width >= 48rem) {
     max-width: 21rem;
@@ -1184,6 +1191,7 @@
 }
 .hp-book-card_mini .hp-book-card-title {
   text-align: center;
+  text-wrap: balance;
 }
 .hp-book-card_mini .hp-book-card-authors {
   text-align: center;
@@ -1890,17 +1898,36 @@
   }
 }
 .hp-hero__list {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   margin-inline: calc(var(--spacing) * -3);
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   gap: calc(var(--spacing) * 5);
   overflow-x: auto;
-  padding-block: calc(var(--spacing) * 3);
+  padding-inline: calc(var(--spacing) * 3);
   padding-top: 3rem;
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  --tw-scroll-snap-strictness: mandatory;
   @media (width >= 48rem) {
+    margin-inline: calc(2.25rem * -1);
+  }
+  @media (width >= 48rem) {
+    padding-inline: 2.25rem;
+  }
+  @media (width >= 90rem) {
     margin-inline: auto;
   }
+  @media (width >= 90rem) {
+    justify-content: center;
+  }
+  @media (width >= 90rem) {
+    padding-inline: calc(var(--spacing) * 0);
+  }
+}
+.hp-hero__list::-webkit-scrollbar {
+  display: none;
 }
 .hp-footer {
   border-top-style: var(--tw-border-style);
@@ -2150,6 +2177,11 @@
   inherits: false;
   initial-value: 1;
 }
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -2183,6 +2215,7 @@
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
+      --tw-scroll-snap-strictness: proximity;
     }
   }
 }

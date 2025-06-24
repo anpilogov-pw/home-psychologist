@@ -22,6 +22,14 @@
 }
 
 .hp-hero__list {
-	@apply flex flex-row gap-5 justify-center overflow-x-auto -mx-3 py-3 pt-[3rem];
-	@apply md:mx-auto;
+	scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer и Edge Legacy */
+	@apply flex flex-row gap-5 justify-start overflow-x-auto -mx-3 px-3 pt-[3rem];
+	@apply snap-x snap-mandatory;
+	@apply md:-mx-[2.25rem] md:px-[2.25rem];
+	@apply 3xl:justify-center 3xl:mx-auto 3xl:px-0;
+}
+
+.hp-hero__list::-webkit-scrollbar {
+	display: none; /* Chrome, Safari */
 }

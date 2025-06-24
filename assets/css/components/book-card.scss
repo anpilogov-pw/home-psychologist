@@ -34,7 +34,7 @@
 }
 
 .hp-book-card-title {
-	@apply mb-1 text-[1.125rem] text-left font-medium leading-[120%] line-clamp-2;
+	@apply mb-1 text-[1.125rem] text-left text-balance font-medium leading-[120%] line-clamp-2;
 	@apply 3xl:mb-2 3xl:text-[1.25rem];
 }
 
@@ -78,19 +78,16 @@
 
 
 .hp-book-card_mini {
+	@apply snap-center snap-always;
 	@apply max-w-[18.5rem];
 	@apply md:max-w-[21rem];
 	@apply 3xl:max-w-[18.5rem];
 }
 
 .hp-book-card_mini .hp-book-card-title {
-	@apply text-center;
+	@apply text-center text-balance;
 }
 
 .hp-book-card_mini .hp-book-card-authors {
 	@apply text-center;
-}
-
-.hp-book-card_mini .hp-book-image {
-	@apply 
 }
