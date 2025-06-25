@@ -1,0 +1,7 @@
+.hp-person-achievement-list {
+	@apply flex flex-col gap-2;
+}
+
+.hp-person-achievement-list__item {
+	@apply text-[1rem] text-gray-800 leading-[140%];
+}

@@ -1,4 +1,5 @@
 .hp-book-card {
+	@apply snap-center snap-always;
 	@apply flex flex-none flex-col items-start p-6 rounded-xl border-1 border-gray-200 w-full bg-white;
 	@apply md:rounded-2xl;
 	@apply 3xl:max-w-[26rem];

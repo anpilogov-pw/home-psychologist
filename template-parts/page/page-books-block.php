@@ -17,10 +17,10 @@ $link = $args['link'] ?? home_url();
 $show_link = $args['show_link'] ?? true;
 $order = $args['order'] ?? 'R';
 $limit = $args['limit'] ?? 6;
-$color_schema = $args['color_schema'] ? 'hp-books-block_' . $args['color_schema'] : 'hp-books-block_white' ;
+$color_schema = $args['color_schema'] ?? 'white';
 ?>
 
-<section class="hp-books-block <?php echo esc_attr($color_schema) ?>">
+<section class="hp-books-block <?php echo esc_attr('hp-books-block_' . $color_schema) ?>">
 	<div class="hp-block hp-books-block__wrapper">
 		<hgroup class="hp-books-block__hgroup">
 			<h2 class="hp-books-block__title">

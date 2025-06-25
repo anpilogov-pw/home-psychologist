@@ -197,3 +197,8 @@ add_action('pre_get_posts', function ($query) {
 		}
 	}
 });
+
+add_action( 'init', function() {
+	register_taxonomy_for_object_type( 'category', 'hp_experts' );
+	register_taxonomy_for_object_type( 'post_tag', 'hp_experts' );
+}, 11 );

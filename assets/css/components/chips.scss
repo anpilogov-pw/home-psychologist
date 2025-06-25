@@ -1,0 +1,13 @@
+.hp-chips {
+	@apply block text-gray-800 font-medium text-[0.875rem] border-1 border-gray-200 px-2 py-1 rounded-2xl max-w-[15.625rem] truncate transition-colors leading-[100%];
+	@apply md:text-[1.125rem] md:px-4 md:py-1.5 md:rounded-3xl;
+}
+
+.hp-chips_prof {
+	@apply max-w-[20rem];
+}
+
+.hp-chips_link {
+	@apply hover:text-emerald-800 focus:text-emerald-800;
+	@apply hover:border-gray-300 focus:border-gray-300;
+}
