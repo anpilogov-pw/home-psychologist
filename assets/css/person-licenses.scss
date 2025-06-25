@@ -1,0 +1,26 @@
+.hp-person-licenses {
+ @apply flex flex-col pb-8;
+ @apply md:pb-16;
+}
+
+.hp-person-licenses__title {
+ @apply text-gray-800 font-bold text-[1.75rem];
+ @apply md:text-[2rem] md:gap-8;
+}
+
+.hp-person-licenses-list {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;  /* Internet Explorer и Edge Legacy */
+	@apply flex flex-row gap-3 justify-start overflow-x-auto -mx-3 px-3 py-2 ;
+	@apply snap-x snap-mandatory;
+	@apply md:-mx-[2.25rem] md:px-[2.25rem] md:gap-6;
+	@apply 3xl:flex-wrap 3xl:-mx-1 3xl:px-1;
+}
+
+.hp-person-licenses-list::-webkit-scrollbar {
+	display: none; /* Chrome, Safari */
+}
+
+.hp-person-licenses-list__item {
+	@apply snap-center snap-always;
+}

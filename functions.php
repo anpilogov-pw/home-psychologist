@@ -13,6 +13,7 @@ require_once get_template_directory() . '/inc/breadcrumbs.php';
 require_once get_template_directory() . '/inc/rank_math.php';
 require_once get_template_directory() . '/inc/shortcodes.php';
 require_once get_template_directory() . '/inc/admin-notification.php';
+require_once get_template_directory() . '/inc/fancybox.php';
 
 function theme_setup()
 {
@@ -29,3 +30,6 @@ function enqueue_assets()
   wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/index.js', [], $theme_version, false);
 }
 add_action('wp_enqueue_scripts', 'enqueue_assets');
+
+
+

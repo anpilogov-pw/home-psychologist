@@ -1,0 +1,18 @@
+.hp-persone-license-card {
+	box-shadow: 0px 28px 8px 0px rgba(0, 0, 0, 0),
+		0px 18px 7px 0px rgba(0, 0, 0, 0.01), 0px 10px 6px 0px rgba(0, 0, 0, 0.02),
+		0px 4px 4px 0px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+	@apply flex flex-col justify-between p-4 rounded-2xl w-[15.5rem] h-[19.438rem] border-1 border-[#F4F4F5];
+	@apply md:w-[19.125rem] md:h-[25.875rem];
+}
+
+.hp-persone-license-card__image {
+	@apply bg-[#F4F4F5] rounded-xl overflow-hidden object-contain object-center cursor-pointer;
+	@apply h-[15.5rem] w-full;
+	@apply md:h-[20rem];
+}
+
+.hp-persone-license-card__title {
+	@apply block text-[1rem] text-gray-800 font-medium truncate;
+	@apply md:text-[1.125rem];
+}

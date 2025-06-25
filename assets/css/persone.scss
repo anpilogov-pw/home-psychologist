@@ -1,0 +1,44 @@
+.hp-person {
+	@apply flex flex-col gap-8 py-8;
+	@apply 3xl:flex-row 3xl:gap-16 3xl:py-16;
+}
+
+.hp-person-picture {
+	@apply flex flex-none place-self-center;
+	@apply h-[15.5rem] w-[15.5rem];
+	@apply md:h-[26rem] md:w-[26rem];
+	@apply 3xl:place-self-start;
+}
+
+.hp-person-picture__image {
+	@apply block rounded-full object-cover object-center cursor-pointer;
+	@apply h-[15.5rem] w-[15.5rem];
+	@apply md:h-[26rem] md:w-[26rem];
+}
+
+.hp-person__wrapper {
+	@apply block w-full;
+}
+
+.hp-person__title {
+	@apply text-[1.75rem] text-balance text-gray-800 font-bold mb-6 leading-[140%];
+	@apply md:text-[2.25rem] md:mb-7;
+}
+
+.hp-person-block {
+	@apply flex flex-row flex-wrap gap-2 mt-3;
+	@apply md:mt-6;
+}
+
+.hp-person-block_list {
+	@apply flex-col;
+}
+
+.hp-person-block__title {
+	@apply text-[1rem] text-gray-500 leading-[160%];
+	@apply md:text-[1.125rem];
+}
+
+.hp-person-block-list {
+	@apply flex flex-row flex-wrap gap-2;
+}
