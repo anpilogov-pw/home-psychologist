@@ -14,6 +14,9 @@ require_once get_template_directory() . '/inc/rank_math.php';
 require_once get_template_directory() . '/inc/shortcodes.php';
 require_once get_template_directory() . '/inc/admin-notification.php';
 require_once get_template_directory() . '/inc/fancybox.php';
+require_once get_template_directory() . '/inc/hp-load-expert-posts.php';
+require_once get_template_directory() . '/inc/hp-load-author-books.php';
+
 
 function theme_setup()
 {

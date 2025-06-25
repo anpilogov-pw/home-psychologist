@@ -17,3 +17,7 @@
 .hp-articles-block__actions {
 	@apply max-md:absolute max-md:left-[50%] max-md:bottom-8 max-md:-translate-x-[50%] md:static;
 }
+
+.hp-articles-block__upload button {
+	@apply self-center m-auto;
+}

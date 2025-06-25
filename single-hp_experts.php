@@ -8,6 +8,7 @@
 			$career = get_field('hp_expert_prof');
 			$bio = get_field('hp_expert_bio');
 			$categories = get_the_category();
+			$id = get_the_ID();
 		?>
 		<article id="person-<?php the_ID(); ?>" class="hp-block hp-person">
 			<?php if ($avatar) : ?>
@@ -40,7 +41,7 @@
 				<?php if ($career) : ?>
 					<div class="hp-person-block">
 						<h2 class="hp-person-block__title">Профессия:</h2>
-						<p class="hp-chips" title="<?php echo esc_attr($career); ?>">
+						<p class="hp-chips hp-chips_prof" title="<?php echo esc_attr($career); ?>">
 							<?php echo esc_html($career); ?>
 						</p>
 					</div>
@@ -91,10 +92,12 @@
 		<?php endif; ?>
 	<?php endwhile; endif; ?>
 
-	<?php get_template_part('template-parts/page/page-articles-block', null, [
-		'title' => 'Статьи эксперта',
-		'show_link' => false
-	]); ?>
+	<?php if ($id) : ?>
+		<?php get_template_part('template-parts/page/page-expert-articles-block', null, [
+			'title' => 'Статьи эксперта',
+			'expert_id' => $id
+		]); ?>
+	<?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

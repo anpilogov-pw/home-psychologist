@@ -8,6 +8,7 @@
 			$career = get_field('hp_author_career');
 			$bio = get_field('hp_author_bio');
 			$terms = get_the_terms( get_the_ID(), 'hp_book_taxonomy' );
+			$id = get_the_ID();
 		?>
 		<article id="person-<?php the_ID(); ?>" class="hp-block hp-person">
 			<?php if ($avatar) : ?>
@@ -84,11 +85,12 @@
 		</article>
 	<?php endwhile; endif; ?>
 
-	<?php get_template_part('template-parts/page/page-books-block', null, [
-		'title' => 'Книги автора',
-		'show_link' => false,
-		'color_schema' => 'gray'
-	]); ?>
+	<?php if ($id) : ?>
+		<?php get_template_part('template-parts/page/page-author-books-block', null, [
+			'title' => 'Книги автора',
+			'author_id' => $id
+		]); ?>
+	<?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

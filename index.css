@@ -1779,6 +1779,10 @@
     position: static;
   }
 }
+.hp-articles-block__upload button {
+  margin: auto;
+  align-self: center;
+}
 .hp-aside {
   display: flex;
   flex: none;
