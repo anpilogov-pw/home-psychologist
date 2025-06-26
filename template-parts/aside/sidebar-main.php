@@ -42,6 +42,11 @@ if (is_category()) {
 			]); ?>
 		</div>
 		<nav id="hp-categories-nav" class="hp-categories-nav hp-categories-nav_hidden">
+			<button id="hp-categories-nav-close" class="3xl:hidden cursor-pointer" type="button" aria-label="Закрыть рубрики">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7 7 10 10M7 17 17 7"/>
+				</svg>
+			</button>
 			<ul id="hp-categories-list" class="hp-categories-list">
 				<?php foreach ($categories as $category):
 					$id = $category->term_id;

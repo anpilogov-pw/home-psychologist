@@ -16,7 +16,9 @@ require_once get_template_directory() . '/inc/admin-notification.php';
 require_once get_template_directory() . '/inc/fancybox.php';
 require_once get_template_directory() . '/inc/hp-load-expert-posts.php';
 require_once get_template_directory() . '/inc/hp-load-author-books.php';
-
+require_once get_template_directory() . '/inc/transliterate.php';
+require_once get_template_directory() . '/inc/generate-toc-from-content.php';
+require_once get_template_directory() . '/inc/add-anchor-ids-to-heading.php';
 
 function theme_setup()
 {
@@ -30,7 +32,9 @@ function enqueue_assets()
 {
   $theme_version = wp_get_theme()->get('Version');
   wp_enqueue_style('css', get_template_directory_uri() . '/index.css', array(), $theme_version, 'all');
-  wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/index.js', [], $theme_version, false);
+  wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false);
+  wp_enqueue_script('share-script', get_template_directory_uri() . '/assets/js/share.js', array(), $theme_version, true);
+  wp_enqueue_script('mobile-menu-script', get_template_directory_uri() . '/assets/js/mobile-menu-button.js', array(), $theme_version, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_assets');
 

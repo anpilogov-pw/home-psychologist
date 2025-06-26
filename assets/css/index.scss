@@ -26,6 +26,12 @@
 	--breakpoint-3xl: 90rem;
 }
 
+.no-scroll {
+	overflow: hidden;
+	height: 100%;
+}
+
+
 @import "./layout.scss";
 @import "./archive.scss";
 
@@ -47,6 +53,8 @@
 @import './hero-block.scss';
 @import './persone.scss';
 @import './person-licenses.scss';
+@import './single.scss';
+@import './article.scss';
 
 
 @import "./footer.scss";
