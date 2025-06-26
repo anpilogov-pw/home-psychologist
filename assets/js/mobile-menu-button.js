@@ -3,11 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	const buttonClose = document.getElementById("hp-categories-nav-close");
 	const nav = document.getElementById("hp-categories-nav");
 	const body = document.body;
+	const bg = document.querySelector('.hp-categories-nav__background');
 
-	if (button && nav && buttonClose && body) {
+	console.log(button, nav, buttonClose, body, bg);
+	
+
+	if (button && nav && buttonClose && body && bg) {
 		const toggleMenu = () => {
 			const isHidden = nav.classList.contains("hp-categories-nav_hidden");
 
+			bg.classList.toggle('hidden', !isHidden);
 			if (isHidden) {
 				nav.classList.remove("hp-categories-nav_hidden");
 				body.classList.add("no-scroll");

@@ -52,11 +52,11 @@
 }
 
 .hp-card-date {
-	@apply text-nowrap;
+	@apply inline text-wrap;
 }
 
 .hp-card-cats {
-	@apply truncate;
+	@apply inline text-wrap leading-[140%];
 }
 
 .hp-card-cat-link {

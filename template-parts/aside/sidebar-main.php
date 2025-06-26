@@ -64,6 +64,7 @@ if (is_category()) {
 				<?php endforeach; ?>
 			</ul>
 		</nav>
+		<div class="hp-categories-nav__background hidden"></div>
 		<div class="hp-category-mobile-menu-button">
 			<?php get_template_part('template-parts/components/button', null, [
 				'id' => "hp-category-mobile-menu-button",
@@ -85,6 +86,11 @@ if (is_category()) {
 			<?php endif; ?>
 		</div>
 		<nav id="hp-categories-nav" class="hp-categories-nav hp-categories-nav_hidden">
+			<button id="hp-categories-nav-close" class="3xl:hidden cursor-pointer" type="button" aria-label="Закрыть рубрики">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7 7 10 10M7 17 17 7"/>
+				</svg>
+			</button>
 			<ul id="hp-categories-list" class="hp-categories-list">
 				<?php if ($child_categories): ?>
 					<?php foreach ($child_categories as $child_category):
@@ -113,6 +119,7 @@ if (is_category()) {
 				</li>
 			</ul>
 		</nav>
+		<div class="hp-categories-nav__background hidden"></div>
 		<div class="hp-category-mobile-menu-button">
 			<?php get_template_part('template-parts/components/button', null, [
 				'id' => "hp-category-mobile-menu-button",

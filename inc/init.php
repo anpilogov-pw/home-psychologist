@@ -61,43 +61,6 @@ add_action('init', function () {
 		]);
 }, 11);
 
-// Оключение базы под hp_book_taxonomy
-add_action('init', function () {
-		register_taxonomy('hp_book_taxonomy', array('hp_books', 'hp_authors'), [
-				'hierarchical' => true,
-				'public' => true,
-				'rewrite' => [
-					'slug' => 'knigi',
-					'with_front' => false,
-				],
-				'show_ui' => true,
-				'show_in_rest' => true,
-				'labels' => [
-						'name' => 'Категории',
-						'singular_name' => 'Категория',
-						'menu_name' => 'Жанры',
-						'all_items' => 'Все жанры',
-						'edit_item' => 'Изменить жанр',
-						'view_item' => 'Посмотреть жанр',
-						'update_item' => 'Обновить жанр',
-						'add_new_item' => 'Добавить новый жанр',
-						'new_item_name' => 'Новое название жанра',
-						'parent_item' => 'Родительский жанр',
-						'parent_item_colon' => 'Родительский жанр:',
-						'search_items' => 'Поиск жанров',
-						'not_found' => 'Жанры не найдены',
-						'no_terms' => 'Нет жанров',
-						'filter_by_item' => 'Фильтровать по жанрам',
-						'items_list_navigation' => 'Навигация по жанрам',
-						'items_list' => 'Список жанров',
-						'back_to_items' => '← Перейти к жанрам',
-						'item_link' => 'Ссылка на жанр',
-						'item_link_description' => 'Ссылка на жанр',
-				],
-				'object_type' => array('hp_books'),
-		]);
-}, 11);
-
 function custom_posts_per_page( $query ) {
 		// Проверяем, является ли запрос основным и не является ли административным
 		if ( !is_admin() && $query->is_main_query() ) {
@@ -109,7 +72,7 @@ function custom_posts_per_page( $query ) {
 
 				if (is_tax('hp_book_taxonomy')) {
 						// Устанавливаем количество выводимых постов
-						$query->set( 'posts_per_page', 8 ); // Количество постов на странице
+						$query->set( 'posts_per_page', 6 ); // Количество постов на странице
 				}
 		}
 }
@@ -145,14 +108,6 @@ function custom_redirect_search_with_post_type() {
 		}
 }
 add_action('template_redirect', 'custom_redirect_search_with_post_type');
-
-add_filter('rewrite_rules_array', function($rules) {
-    $new_rules = array(
-        'knigi/([^/]+)/([^/]+)/?$' => 'index.php?hp_books=$matches[2]&hp_book_taxonomy=$matches[1]',
-    );
-
-    return $new_rules + $rules;
-});
 
 add_action('pre_get_posts', function ($query) {
 	if (!is_admin() && $query->is_main_query() && is_post_type_archive('hp_books')) {

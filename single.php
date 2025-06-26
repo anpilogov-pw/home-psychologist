@@ -169,6 +169,8 @@
 		'link_text' => t('page.articles.block.link.title'),
 		'link' => '/blog/'
 	]); ?>
+
+	<?php get_template_part('template-parts/page/page-taxonomies', null, []); ?>
 </main>
 
 <?php get_footer(); ?>
