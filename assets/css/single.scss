@@ -1,0 +1,5 @@
+.hp-single {
+	@apply flex flex-col gap-4 py-8;
+	@apply md:gap-6;
+	@apply 3xl:flex-row-reverse 3xl:py-16;
+}

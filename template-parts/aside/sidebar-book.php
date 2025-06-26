@@ -43,30 +43,35 @@ if (is_tax('hp_book_taxonomy')) {
 						]); ?>
 				</div>
 				<nav id="hp-categories-nav" class="hp-categories-nav hp-categories-nav_hidden">
-						<ul id="hp-categories-list" class="hp-categories-list">
-								<?php foreach ($book_taxonomies as $taxonomy):
-										$id = $taxonomy->term_id;
-										$url = get_term_link($taxonomy);
-										$name = esc_html($taxonomy->name);
-										?>
-										<li class="hp-category-item">
-												<?php get_template_part('template-parts/components/link_button', null, [
-														'id' => $id,
-														'href' => $url,
-														'text' => $name,
-														'class' => 'hp-button_gray'
-												]); ?>
-										</li>
-								<?php endforeach; ?>
-						</ul>
+					<button id="hp-categories-nav-close" class="3xl:hidden cursor-pointer" type="button" aria-label="Закрыть рубрики">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7 7 10 10M7 17 17 7"/>
+						</svg>
+					</button>
+					<ul id="hp-categories-list" class="hp-categories-list">
+							<?php foreach ($book_taxonomies as $taxonomy):
+									$id = $taxonomy->term_id;
+									$url = get_term_link($taxonomy);
+									$name = esc_html($taxonomy->name);
+									?>
+									<li class="hp-category-item">
+											<?php get_template_part('template-parts/components/link_button', null, [
+													'id' => $id,
+													'href' => $url,
+													'text' => $name,
+													'class' => 'hp-button_gray'
+											]); ?>
+									</li>
+							<?php endforeach; ?>
+					</ul>
 				</nav>
 				<div class="hp-category-mobile-menu-button">
-						<?php get_template_part('template-parts/components/button', null, [
-								'id' => "hp-category-mobile-menu-button",
-								'text' => 'Категории',
-								'aria_label' => 'Открыть мобильное меню категорий',
-								'class' => 'hp-button_gray'
-						]); ?>
+					<?php get_template_part('template-parts/components/button', null, [
+							'id' => "hp-category-mobile-menu-button",
+							'text' => 'Категории',
+							'aria_label' => 'Открыть мобильное меню категорий',
+							'class' => 'hp-button_gray'
+					]); ?>
 				</div>
 		<?php endif; ?>
 
@@ -81,6 +86,11 @@ if (is_tax('hp_book_taxonomy')) {
 						<?php endif; ?>
 				</div>
 				<nav id="hp-categories-nav" class="hp-categories-nav hp-categories-nav_hidden">
+						<button id="hp-categories-nav-close" class="3xl:hidden cursor-pointer" type="button" aria-label="Закрыть рубрики">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7 7 10 10M7 17 17 7"/>
+							</svg>
+						</button>
 						<ul id="hp-categories-list" class="hp-categories-list">
 								<?php if ($child_taxonomies): ?>
 										<?php foreach ($child_taxonomies as $child_taxonomy):

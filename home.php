@@ -12,22 +12,30 @@
 					<header class="hp-posts__header">
 						<nav class="hp-posts__nav">
 							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'DESC') ? '' : 'hp-button_gray';
+							$current_orderby = $_GET['orderby'] ?? '';
+							$current_order = strtoupper($_GET['order'] ?? 'DESC');
+
+							// Определим, в каком направлении сейчас сортировка по дате
+							$is_date_asc = ($current_orderby === 'date' && $current_order === 'ASC');
+							$is_date_desc = ($current_orderby === 'date' && $current_order === 'DESC');
+
+							// Кнопка сортировки по дате: переключение направления
 							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-date-desc',
-								'href' => '?orderby=date&order=DESC',
-								'text' => 'По новизне',
-								'class' => $is_active
+								'id' => 'hp-orderby-date-toggle',
+								'href' => '?orderby=date&order=' . ($is_date_asc ? 'DESC' : 'ASC'),
+								'text' => 'По новизне ' . ($is_date_asc ? '↑' : '↓'),
+								'class' => ($current_orderby === 'date') ? '' : 'hp-button_gray'
 							]);
-							?>
-							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'ASC') ? '' : 'hp-button_gray';
-							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-comment-desc',
-								'href' => '?orderby=date&order=ASC',
-								'text' => 'По популярности',
-								'class' => $is_active
-							]);
+
+							// Кнопка "Сбросить", если есть параметры сортировки
+							if (!empty($current_orderby) || !empty($_GET['order'])) {
+								get_template_part('template-parts/components/link_button', null, [
+									'id' => 'hp-orderby-reset',
+									'href' => strtok($_SERVER["REQUEST_URI"], '?'), // Убираем GET-параметры
+									'text' => 'Сбросить',
+									'class' => 'hp-button_gray'
+								]);
+							}
 							?>
 						</nav>
 					</header>
