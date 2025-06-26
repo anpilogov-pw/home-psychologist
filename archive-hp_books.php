@@ -80,7 +80,9 @@
 		</div>
 	</div>
 	
-	<?php get_template_part('template-parts/page/page-seo-block'); ?>
+	<?php if (!is_paged()) : ?>
+		<?php get_template_part('template-parts/page/page-seo-block'); ?>
+	<?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

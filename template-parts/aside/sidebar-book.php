@@ -65,6 +65,7 @@ if (is_tax('hp_book_taxonomy')) {
 							<?php endforeach; ?>
 					</ul>
 				</nav>
+				<div class="hp-categories-nav__background hidden"></div>
 				<div class="hp-category-mobile-menu-button">
 					<?php get_template_part('template-parts/components/button', null, [
 							'id' => "hp-category-mobile-menu-button",
@@ -118,6 +119,7 @@ if (is_tax('hp_book_taxonomy')) {
 								</li>
 						</ul>
 				</nav>
+				<div class="hp-categories-nav__background hidden"></div>
 				<div class="hp-category-mobile-menu-button">
 						<?php get_template_part('template-parts/components/button', null, [
 								'id' => "hp-category-mobile-menu-button",

@@ -3,8 +3,8 @@
 }
 
 .hp-article-aside {
-	@apply w-full min-w-[26rem];
-	@apply 3xl:w-[26rem];
+	@apply w-full;
+	@apply 3xl:w-[26rem] 3xl:min-w-[26rem];
 }
 
 .hp-article-toc {
@@ -74,11 +74,11 @@
 }
 
 .hp-article-picture {
-	@apply block w-full min-h-[26rem];
+	@apply block w-full min-h-[12rem] md:min-h-[18rem] 3xl:min-h-[26rem];
 }
 
 .hp-article-picture__image {
-	@apply block w-full aspect-video object-cover object-center min-h-[26rem] rounded-2xl overflow-hidden;
+	@apply block w-full aspect-video object-cover object-center min-h-[12rem] md:min-h-[18rem] 3xl:min-h-[26rem] rounded-2xl overflow-hidden;
 }
 
 .hp-article__footer {
