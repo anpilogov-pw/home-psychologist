@@ -21,7 +21,7 @@ add_action('admin_enqueue_scripts', function($hook) {
     if ($hook !== 'edit.php' || $_GET['post_type'] !== 'hp_books') return;
 
     wp_enqueue_script('hp-books-toggle', get_template_directory_uri() . '/admin/hp-books-toggle.js', ['jquery'], null, true);
-		wp_enqueue_script('hp-notification', get_template_directory_uri() . '/admin/hp-nitification.js', ['jquery'], null, true);
+	wp_enqueue_script('hp-notification', get_template_directory_uri() . '/admin/hp-nitification.js', ['jquery'], null, true);
     wp_localize_script('hp-books-toggle', 'HPBooksAjax', [
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce'    => wp_create_nonce('hp_books_toggle_nonce')

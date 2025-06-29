@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const buttonClose = document.getElementById("hp-categories-nav-close");
 	const nav = document.getElementById("hp-categories-nav");
 	const body = document.body;
-	const bg = document.querySelector('.hp-categories-nav__background');
-
-	console.log(button, nav, buttonClose, body, bg);
-	
+	const bg = document.querySelector('.hp-categories-nav__background');	
 
 	if (button && nav && buttonClose && body && bg) {
 		const toggleMenu = () => {

@@ -12,23 +12,23 @@
 					<header class="hp-posts__header">
 						<nav class="hp-posts__nav">
 							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'DESC') ? '' : 'hp-button_gray';
-							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-date-desc',
-								'href' => '?orderby=date&order=DESC',
-								'text' => 'По новизне',
-								'class' => $is_active
-							]);
-							?>
+							//$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'DESC') ? '' : 'hp-button_gray';
+							//get_template_part('template-parts/components/link_button', null, [
+							//	'id' => 'hp-orderby-date-desc',
+							//	'href' => '?orderby=date&order=DESC',
+							//	'text' => 'По новизне',
+							//	'class' => $is_active
+							//]);
+							//?>
 							<?php
-							$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'ASC') ? '' : 'hp-button_gray';
-							get_template_part('template-parts/components/link_button', null, [
-								'id' => 'hp-orderby-comment-desc',
-								'href' => '?orderby=date&order=ASC',
-								'text' => 'По популярности',
-								'class' => $is_active
-							]);
-							?>
+							//$is_active = (isset($_GET['orderby']) && $_GET['orderby'] == 'date' && $_GET['order'] == 'ASC') ? '' : 'hp-button_gray';
+							//get_template_part('template-parts/components/link_button', null, [
+							//	'id' => 'hp-orderby-comment-desc',
+							//	'href' => '?orderby=date&order=ASC',
+							//	'text' => 'По популярности',
+							//	'class' => $is_active
+							//]);
+							//?>
 						</nav>
 					</header>
 				<?php endif; ?>

@@ -35,5 +35,8 @@
 	"page.no-posts.text-1": "Здесь ещё нет публикаций, но мы активно над ними работаем.",
 	"page.no-posts.text-2": "Хотите предложить тему?",
 	"more": "Подробнее",
-	"sidebar.book-taxonomies.title": "Категории"
+	"sidebar.book-taxonomies.title": "Категории",
+	"comment.no-results.title": "У вас есть отзыв?",
+	"comment.no-results.text": "Вы можете первым оставить отзыв о книге! Мы очень скоро его опубликуем.",
+	"comment.no-results.button": "Оставить отзыв"
 }

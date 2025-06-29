@@ -1,0 +1,88 @@
+.hp-review-form__wrapper {
+	@apply fixed top-0 left-0 right-0 bottom-0 z-40 p-3;
+	@apply flex flex-col items-center justify-center opacity-100 transition-all;
+	backdrop-filter: blur(4px);
+}
+
+.hp-review-form__wrapper[data-show="false"] {
+	@apply opacity-0 top-full pointer-events-none;
+}
+
+.hp-review-form {
+	@apply w-full max-w-[40rem] z-20 bg-white rounded-3xl p-6 border-1 border-gray-200 shadow-xl;
+}
+
+.hp-form-group {
+	@apply flex flex-col gap-2;
+	@apply text-gray-800 text-[1rem] mb-3;
+
+	input:disabled, textarea:disabled {
+		@apply opacity-50 pointer-events-none;
+	}
+
+	label .required,
+	legend .required {
+		@apply text-red-600;
+	}
+
+	input,
+	textarea {
+		@apply border-2 border-gray-400 rounded-xl h-10 px-4;
+	}
+
+	textarea {
+		@apply py-2 min-h-[11rem];
+	}
+}
+
+.hp-form-buttons {
+	@apply flex flex-row items-center justify-center gap-3;
+}
+
+.hp-form-button {
+	@apply px-8 py-2 rounded-xl bg-emerald-800 text-white cursor-pointer transition-colors;
+	@apply hover:bg-emerald-900 focus:bg-emerald-900;
+}
+
+.hp-form-button:disabled {
+	@apply opacity-50 pointer-events-none;
+}
+
+.hp-form-button[type="reset"] {
+	@apply px-8 py-2 rounded-xl bg-gray-200 text-gray-800 cursor-pointer;
+	@apply hover:bg-gray-300 focus:bg-gray-300;
+}
+
+.hp-honeypot {
+	@apply hidden;
+}
+
+.rating-options {
+	position: relative;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	gap: 0.3rem;
+}
+
+.rating-options input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.rating-options label {
+	font-size: 2rem;
+	cursor: pointer;
+	transition: color 0.2s;
+	@apply text-gray-400;
+}
+
+.rating-options input[type="radio"]:checked ~ label,
+.rating-options label:hover,
+.rating-options label:hover ~ label {
+	@apply text-emerald-800;
+}

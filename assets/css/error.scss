@@ -1,0 +1,35 @@
+.hp-error {
+	@apply max-w-[53.5rem] mx-auto text-base md:text-lg text-gray-900 py-8 3xl:py-16;
+}
+
+.hp-error__title {
+	@apply text-emerald-900 text-[8rem] mb-4 font-extrabold leading-none;
+}
+
+.hp-error__description {
+	@apply text-gray-900 mb-6;
+}
+
+.hp-error__subtitle {
+	@apply text-xl font-semibold mb-3;
+}
+
+.hp-error__list {
+	@apply list-disc list-inside mb-6;
+
+	li {
+		@apply mb-1;
+	}
+
+	li a {
+		@apply text-emerald-800 hover:text-emerald-900 focus:text-emerald-900 underline;
+	}
+}
+
+.hp-error__note {
+	@apply text-gray-700;
+}
+
+.hp-error__note a {
+	@apply text-emerald-800 hover:text-emerald-900 focus:text-emerald-900 underline;
+}

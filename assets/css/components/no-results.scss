@@ -20,3 +20,12 @@
 .hp-no-results__text a {
 	@apply hover:underline focus:underline;
 }
+
+.hp-no-results__wrapper {
+	@apply max-md:flex max-md:flex-row max-md:items-center max-md:justify-center;
+}
+
+.hp-no-results__button {
+	@apply px-8 py-2 rounded-xl bg-emerald-800 text-white mt-4 place-self-center md:mt-2 cursor-pointer;
+	@apply hover:bg-emerald-900 focus:bg-emerald-900;
+}

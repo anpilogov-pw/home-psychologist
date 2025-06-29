@@ -11,6 +11,8 @@ setup_postdata($post); // Обеспечим доступ к функциям ш
 
 $exp_echeck = get_field('hp_book_age_check');
 $exp_number = get_field('hp_book_age_number');
+$ozon = get_field('hp_book_ozon');
+$wb = get_field('hp_book_wb');
 ?>
 
 
@@ -31,6 +33,16 @@ $exp_number = get_field('hp_book_age_number');
 					alt="Изображение отсутствует" class="hp-book-image__img" />
 			<?php endif; ?>
 		</a>
+	</div>
+	<div class="hp-book-rating">
+		<div class="hp-book-rating__item">
+			<span><?php echo esc_html($ozon); ?>/10</span>
+			<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/ozon.png'); ?>" width="24" height="24" alt="Рейтинг Ozon" loading="lazy">
+		</div>
+		<div class="hp-book-rating__item">
+			<span><?php echo esc_html($wb); ?>/10</span>
+			<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/icons/wb.png'); ?>" width="24" height="24" alt="Рейтинг WB" loading="lazy">
+		</div>
 	</div>
 	<header class="hp-book-card-header">
 		<h3 class="hp-book-card-title" title="<?php the_title(); ?>">

@@ -18,6 +18,7 @@ $show_link = $args['show_link'] ?? true;
 $order = $args['order'] ?? 'R';
 $limit = $args['limit'] ?? 6;
 $color_schema = $args['color_schema'] ?? 'white';
+$exclude = $args['exclude'] ?? ''
 ?>
 
 <section class="hp-books-block <?php echo esc_attr('hp-books-block_' . $color_schema) ?>">
@@ -39,6 +40,6 @@ $color_schema = $args['color_schema'] ?? 'white';
 				<?php endif; ?>
 			</div>
 		</hgroup>
-		<?php echo render_books_component(['order' => $order, 'limit' => $limit]); ?>
+		<?php echo render_books_component(['order' => $order, 'limit' => $limit, 'exclude' => $exclude]); ?>
 	</div>
 </section>

@@ -87,7 +87,7 @@ add_action('pre_get_posts', 'filter_query_by_post_type');
 
 
 function custom_redirect_search_with_post_type() {
-		if (is_search() && ( empty($_GET['s']) || empty($_GET['search']))) {
+		if (is_search() && empty($_GET['s'])) {
 			$redirect_url = home_url();
 
 			// Выполняем 301 редирект

@@ -82,11 +82,15 @@
 }
 
 .hp-article__footer {
-	@apply flex flex-row flex-wrap gap-3 border-t-1 border-gray-100 pt-3 mt-4 md:mt-6;
+	@apply flex flex-row max-md:flex-wrap gap-3 border-t-1 border-gray-100 pt-3 mt-4 md:mt-6;
 }
 
 .hp-article-block {
 	@apply flex flex-none flex-row flex-wrap gap-2 w-full;
+}
+
+.hp-article__footer .hp-article-block {
+	@apply w-fit;
 }
 
 .hp-article-block__title {
