@@ -30,6 +30,10 @@
 	@apply w-full h-full rounded-xl object-cover object-center;
 }
 
+.hp-book-card .hp-book-rating {
+	@apply mx-auto mb-5;
+}
+
 .hp-book-card-header {
 	@apply flex flex-col w-full;
 }

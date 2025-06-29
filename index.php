@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+//var_dump(is_404());
+//exit;
+
+?>
+
 
 <main class="hp-main">
 	<?php

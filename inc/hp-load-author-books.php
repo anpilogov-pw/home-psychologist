@@ -1,20 +1,12 @@
 <?php
-add_action('wp_ajax_load_author_books', 'hp_load_author_books');
-add_action('wp_ajax_nopriv_load_author_books', 'hp_load_author_books');
-
 if (!wp_script_is('hp-ajax-author-books', 'enqueued')) {
-	wp_enqueue_script(
-		'hp-ajax-author-books',
-		get_template_directory_uri() . '/assets/js/ajax-author-books.js',
-		[],
-		null,
-		true
-	);
-
-	wp_localize_script('hp-ajax-author-books', 'hp_ajax', [
-		'url'   => admin_url('admin-ajax.php'),
-		'nonce' => wp_create_nonce('hp_ajax_nonce'),
-	]);
+	add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script( 'hp-ajax-author-books', get_template_directory_uri() . '/assets/js/ajax-author-books.js', [], null, true );
+		wp_localize_script('hp-ajax-author-books', 'hp_ajax', [
+			'url'   => admin_url('admin-ajax.php'),
+			'nonce' => wp_create_nonce('hp_ajax_nonce'),
+		]);
+	});
 }
 
 function hp_load_author_books() {
@@ -60,3 +52,6 @@ function hp_load_author_books() {
 		'current_page'  => $paged,
 	]);
 }
+
+add_action('wp_ajax_load_author_books', 'hp_load_author_books');
+add_action('wp_ajax_nopriv_load_author_books', 'hp_load_author_books');

@@ -31,6 +31,10 @@
 	height: 100%;
 }
 
+[data-copy] {
+	@apply cursor-pointer;
+}
+
 
 @import "./layout.scss";
 @import "./archive.scss";
@@ -55,6 +59,8 @@
 @import './person-licenses.scss';
 @import './single.scss';
 @import './article.scss';
+@import './book.scss';
+@import './error.scss';
 
 
 @import "./footer.scss";
