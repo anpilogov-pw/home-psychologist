@@ -39,16 +39,20 @@
 }
 
 .hp-book-card-title {
-	@apply mb-1 text-[1.125rem] text-left text-balance font-medium leading-[120%] line-clamp-2;
+	@apply mb-1 text-[1.125rem] text-left text-balance font-medium line-clamp-2;
 	@apply 3xl:mb-2 3xl:text-[1.25rem];
 }
 
+.hp-book-card-title a {
+	@apply leading-[140%];
+}
+
 .hp-book-card-authors {
-	@apply text-[0.875rem] text-gray-500 leading-[120%];
+	@apply text-[0.875rem] text-gray-500 text-balance;
 }
 
 .hp-book-card-authors a {
-	@apply hover:underline focus:underline hover:text-emerald-700 focus:text-emerald-700 transition-colors;
+	@apply hover:underline focus:underline hover:text-emerald-700 focus:text-emerald-700 transition-colors leading-[140%];
 }
 
 .hp-book-card-excerpt {
@@ -95,4 +99,8 @@
 
 .hp-book-card_mini .hp-book-card-authors {
 	@apply text-center;
+}
+
+.hp-book-card_mini .hp-book-card-meta {
+	@apply hidden;
 }

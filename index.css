@@ -1248,8 +1248,6 @@
   -webkit-line-clamp: 2;
   text-align: left;
   font-size: 1.125rem;
-  --tw-leading: 120%;
-  line-height: 120%;
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
   text-wrap: balance;
@@ -1260,13 +1258,18 @@
     font-size: 1.25rem;
   }
 }
+.hp-book-card-title a {
+  --tw-leading: 140%;
+  line-height: 140%;
+}
 .hp-book-card-authors {
   font-size: 0.875rem;
-  --tw-leading: 120%;
-  line-height: 120%;
+  text-wrap: balance;
   color: var(--color-gray-500);
 }
 .hp-book-card-authors a {
+  --tw-leading: 140%;
+  line-height: 140%;
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
@@ -1389,6 +1392,9 @@
 }
 .hp-book-card_mini .hp-book-card-authors {
   text-align: center;
+}
+.hp-book-card_mini .hp-book-card-meta {
+  display: none;
 }
 .hp-books-list {
   display: grid;
@@ -3635,14 +3641,14 @@
 }
 .hp-copyright {
   font-size: 1rem;
-  color: #858585;
+  color: var(--color-gray-700);
 }
 .hp-organization-address {
   margin-top: calc(var(--spacing) * 3);
 }
 .hp-organization-address a {
   font-size: 1rem;
-  color: #858585;
+  color: var(--color-gray-700);
   &:hover {
     @media (hover: hover) {
       text-decoration-line: underline;

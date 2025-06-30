@@ -30,7 +30,7 @@
 }
 
 .hp-copyright {
-	@apply text-[1rem] text-[#858585];
+	@apply text-[1rem] text-gray-700;
 }
 
 .hp-organization-address {
@@ -38,7 +38,7 @@
 }
 
 .hp-organization-address a {
-	@apply text-[1rem] text-[#858585] hover:underline focus:underline;
+	@apply text-[1rem] text-gray-700 hover:underline focus:underline;
 }
 
 .hp-footer-menu {
