@@ -7,8 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
     --color-emerald-100: oklch(95% 0.052 163.051);
     --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
@@ -1353,16 +1353,23 @@
   align-items: center;
   justify-content: center;
   border-radius: calc(infinity * 1px);
-  background-color: var(--color-red-500);
+  background-color: var(--color-red-600);
   --tw-translate-x: calc(1/2 * 100%);
   translate: var(--tw-translate-x) var(--tw-translate-y);
   --tw-translate-y: calc(var(--spacing) * -2);
   translate: var(--tw-translate-x) var(--tw-translate-y);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--color-red-700);
+  --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 .hp-book-age__text {
   font-size: 1rem;
-  --tw-font-weight: var(--font-weight-medium);
-  font-weight: var(--font-weight-medium);
+  --tw-leading: 100%;
+  line-height: 100%;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
   color: var(--color-white);
 }
 .hp-book-card_mini {
