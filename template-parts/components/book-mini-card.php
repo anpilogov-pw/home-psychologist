@@ -7,7 +7,7 @@ if (!isset($post) || !$post instanceof WP_Post) {
 	return;
 }
 
-setup_postdata($post); // Обеспечим доступ к функциям шаблона типа the_title(), и т.д.
+setup_postdata($post);
 
 $exp_echeck = get_field('hp_book_age_check');
 $exp_number = get_field('hp_book_age_number');
@@ -27,10 +27,9 @@ $wb = get_field('hp_book_wb');
 		<?php endif; ?>
 		<a href="<?php the_permalink(); ?>">
 			<?php if (has_post_thumbnail($post)): ?>
-				<?php the_post_thumbnail('medium_large', ['class' => 'hp-book-image__img']); ?>
+				<?php the_post_thumbnail([142, 192], ['class' => 'hp-book-image__img', 'alt' => get_the_title(), 'fetchpriority'  => 'high' ]); ?>
 			<?php else: ?>
-				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>"
-					alt="Изображение отсутствует" class="hp-book-image__img" />
+				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" alt="Изображение отсутствует" class="hp-book-image__img" />
 			<?php endif; ?>
 		</a>
 	</div>
