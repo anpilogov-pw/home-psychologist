@@ -18,7 +18,7 @@ add_action('manage_hp_books_posts_custom_column', function($column, $post_id) {
 }, 10, 2);
 
 add_action('admin_enqueue_scripts', function($hook) {
-    if ($hook !== 'edit.php' || $_GET['post_type'] !== 'hp_books') return;
+    if ($hook !== 'edit.php' || !isset($_GET['post_type']) || $_GET['post_type'] !== 'hp_books') return;
 
     wp_enqueue_script('hp-books-toggle', get_template_directory_uri() . '/admin/hp-books-toggle.js', ['jquery'], null, true);
 	wp_enqueue_script('hp-notification', get_template_directory_uri() . '/admin/hp-nitification.js', ['jquery'], null, true);
