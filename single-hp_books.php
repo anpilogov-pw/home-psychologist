@@ -23,8 +23,8 @@
 					<div class="hp-book-header">
 						<?php get_template_part('template-parts/components/button', null, [
 							'id'          => 'hp-share',
-							'text'        => 'Поделиться статьёй',
-							'aria_label'  => 'Поделиться статьёй',
+							'text'        => 'Поделиться книгой',
+							'aria_label'  => 'Поделиться книгой',
 							'icon'        => file_get_contents(get_template_directory() . '/assets/icons/reply-fill.svg'),
 							'class' => 'hp-button_outline'
 						]); ?>
