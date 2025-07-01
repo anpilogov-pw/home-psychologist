@@ -44,6 +44,7 @@ add_action('wp_enqueue_scripts', function () {
   $theme_version = wp_get_theme()->get('Version');
   wp_enqueue_style('css', get_template_directory_uri() . '/index.min.css', array(), $theme_version, 'all');
   wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false);
+  wp_enqueue_script('developers', get_template_directory_uri() . '/assets/js/developer.js', array(), null, true);
 
   if (is_archive() || is_tax() || is_home()) {
     wp_enqueue_script('mobile-menu-script', get_template_directory_uri() . '/assets/js/mobile-menu-button.js', array(), $theme_version, true);
@@ -69,5 +70,14 @@ add_action('init', function () {
   remove_action('wp_head', 'wp_oembed_add_discovery_links');
   remove_action('wp_head', 'wp_oembed_add_host_js');
 });
+
+add_action( 'wp_default_scripts', function( $scripts ) {
+    if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+        $script = $scripts->registered['jquery'];
+        if ( $script->deps ) { // Check whether the script has any dependencies
+            $script->deps = array_diff( $script->deps, ['jquery-migrate'] );
+        }
+    }
+} );
 
 

@@ -27,7 +27,7 @@ $wb = get_field('hp_book_wb');
 		<?php endif; ?>
 		<a href="<?php the_permalink(); ?>">
 			<?php if (has_post_thumbnail($post)): ?>
-				<?php the_post_thumbnail([142, 192], ['class' => 'hp-book-image__img', 'alt' => get_the_title() ]); ?>
+				<?php the_post_thumbnail([142, 192], ['class' => 'hp-book-image__img', 'alt' => get_the_title(), 'loading' => 'lazy']); ?>
 			<?php else: ?>
 				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" alt="Изображение отсутствует" class="hp-book-image__img" />
 			<?php endif; ?>

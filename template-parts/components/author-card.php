@@ -17,7 +17,7 @@ $career = get_field('hp_author_career');
 	<div class="hp-person-avatar">
 		<a href="<?php the_permalink(); ?>">
 			<?php if ($avatar) : ?>
-				<img class="hp-person-avatar__img" src="<?php echo esc_url($avatar); ?>" width="172" height="172" alt="<?php the_title(); ?>">
+				<img class="hp-person-avatar__img" src="<?php echo esc_url($avatar); ?>" width="172" height="172" alt="<?php the_title(); ?>" loading="lazy">
 			<?php else: ?>
 				<img class="hp-person-avatar__img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="172" height="172" alt="Изображение отсутствует" />
 			<?php endif; ?>
