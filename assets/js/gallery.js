@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 	const galleryContainer = document.getElementById("hp-book-gallery");
+
+	if (!galleryContainer) return;
+
 	const galleryList = galleryContainer.querySelector(".hp-book-gallery-list");
 	const previewLinks = Array.from(galleryList.querySelectorAll("a"));
 

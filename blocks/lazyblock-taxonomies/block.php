@@ -26,7 +26,7 @@ $terms = get_terms([
 					get_template_part('template-parts/components/link_button', null, [
 						'text' => $term->name,
 						'href' => get_term_link($term),
-						'class' => 'hp-button_gray',
+						'class' => 'hp-button_gray hp-button_tax',
 					]);
 					?>
 				</li>
@@ -34,6 +34,7 @@ $terms = get_terms([
 			<li>
 				<?php
 				get_template_part('template-parts/components/link_button', null, [
+					'class' => 'hp-button_tax',
 					'text' => t('tax.button.title'),
 					'href' => '/blog/',
 					'icon' => file_get_contents(get_template_directory() . '/assets/icons/arrow-right.svg'),

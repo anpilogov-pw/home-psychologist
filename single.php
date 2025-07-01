@@ -59,7 +59,7 @@
 							</picture>
 						<?php else: ?>
 							<picture class="hp-author-toast-picture">
-								<img class="hp-author-toast-picture__image" src="<?= esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" width="54" height="54" alt="Изображение отсутствует" loading="lazy">
+								<img class="hp-author-toast-picture__image" src="<?= esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="54" height="54" alt="Изображение отсутствует" loading="lazy">
 							</picture>
 						<?php endif; ?>
 						<div class="hp-author-toast__wrapper">
@@ -125,7 +125,7 @@
 						</picture>
 					<?php else: ?>
 						<picture class="hp-article-picture">
-							<img class="hp-article-picture__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" width="296" height="167" alt="Изображение отсутствует" loading="lazy"/>
+							<img class="hp-article-picture__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="296" height="167" alt="Изображение отсутствует" loading="lazy"/>
 						</picture>
 					<?php endif; ?>
 				</hgroup>

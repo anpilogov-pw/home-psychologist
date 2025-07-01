@@ -19,7 +19,7 @@ $career = get_field('hp_expert_prof');
 			<?php if ($avatar) : ?>
 				<img class="hp-person-avatar__img" src="<?php echo esc_url($avatar); ?>" width="172" height="172" alt="<?php the_title(); ?>">
 			<?php else: ?>
-				<img class="hp-person-avatar__img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" width="172" height="172" alt="Изображение отсутствует" />
+				<img class="hp-person-avatar__img" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="172" height="172" alt="Изображение отсутствует" />
 			<?php endif; ?>
 		</a>
 	</div>

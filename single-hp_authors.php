@@ -17,7 +17,7 @@
 				</picture>
 			<?php else: ?>
 				<picture class="hp-person-picture">
-					<img class="hp-person-picture__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" width="248" height="248" alt="Изображение отсутствует" />
+					<img class="hp-person-picture__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="248" height="248" alt="Изображение отсутствует" />
 				</picture>
 			<?php endif; ?>
 			<section class="hp-person__wrapper">

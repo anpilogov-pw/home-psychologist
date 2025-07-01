@@ -3,10 +3,10 @@
 }
 
 .hp-breadcrumbs-list {
-	@apply flex flex-row flex-wrap gap-3;
+	@apply flex flex-row flex-wrap gap-1 md:gap-3;
 
 	li {
-		@apply relative text-gray-500 font-medium text-[1.125rem] text-nowrap;
+		@apply relative text-gray-500 font-medium text-[0.75rem] md:text-[1.125rem] text-nowrap;
 
 		&:last-child {
 			@apply text-emerald-800 font-semibold;
@@ -23,7 +23,7 @@
 				no-repeat center;
 			background-size: contain;
 			vertical-align: middle;
-			@apply w-[1.125rem] h-[1.125rem] ml-3;
+			@apply w-[0.75rem] md:w-[1.125rem] h-[0.75rem] md:h-[1.125rem] ml-3;
 		}
 
 		&:last-child::after {
@@ -37,5 +37,5 @@
 }
 
 .hp-breadcrumb_last {
-	@apply inline truncate max-w-96;
+	@apply inline truncate max-w-3xs md:max-w-xl;
 }

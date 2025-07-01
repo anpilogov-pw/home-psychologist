@@ -22,7 +22,7 @@ if (isset($matches[1]) && !empty($matches[1])) {
 	$meta_description = $matches[1];
 }
 
-$image_url = get_template_directory_uri() . '/assets/img/laptop-page-header-pattern.png';
+$image_url = get_template_directory_uri() . '/assets/img/laptop-page-header-pattern.webp';
 ?>
 
 <section class="hp-page-header" style="background-image: url('<?php echo $image_url; ?>');">

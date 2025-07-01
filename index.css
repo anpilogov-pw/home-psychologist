@@ -25,7 +25,9 @@
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-3xs: 16rem;
     --container-xs: 20rem;
+    --container-xl: 36rem;
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
@@ -358,12 +360,6 @@
   background-color: var(--color-emerald-800);
   padding-inline: calc(var(--spacing) * 4);
   padding-block: calc(var(--spacing) * 0.5);
-  font-size: 0.875rem;
-  --tw-leading: 100%;
-  line-height: 100%;
-  --tw-font-weight: var(--font-weight-medium);
-  font-weight: var(--font-weight-medium);
-  text-wrap: nowrap;
   color: var(--color-white);
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -382,14 +378,8 @@
   @media (width >= 48rem) {
     padding-block: calc(var(--spacing) * 1.5);
   }
-  @media (width >= 48rem) {
-    font-size: 1.125rem;
-  }
   @media (width >= 90rem) {
     height: calc(var(--spacing) * 9);
-  }
-  @media (width >= 90rem) {
-    font-size: 1.25rem;
   }
 }
 .hp-button__icon > svg {
@@ -451,6 +441,38 @@
     background-color: var(--color-gray-50);
   }
 }
+.hp-button__text {
+  display: block;
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  --tw-leading: 120%;
+  line-height: 120%;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  text-wrap: nowrap;
+  @media (width >= 48rem) {
+    font-size: 1.125rem;
+  }
+  @media (width >= 90rem) {
+    font-size: 1.25rem;
+  }
+}
+.hp-button_tax {
+  @media (width < 48rem) {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  @media (width < 48rem) {
+    padding-block: calc(var(--spacing) * 0.5);
+  }
+}
+.hp-button_tax .hp-button__text {
+  @media (width < 48rem) {
+    font-size: 0.75rem;
+  }
+}
 .hp-breadcrumbs {
   padding-block: calc(var(--spacing) * 3);
   @media (width >= 48rem) {
@@ -461,14 +483,20 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: calc(var(--spacing) * 3);
+  gap: calc(var(--spacing) * 1);
+  @media (width >= 48rem) {
+    gap: calc(var(--spacing) * 3);
+  }
   li {
     position: relative;
-    font-size: 1.125rem;
+    font-size: 0.75rem;
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
     text-wrap: nowrap;
     color: var(--color-gray-500);
+    @media (width >= 48rem) {
+      font-size: 1.125rem;
+    }
     &:last-child {
       --tw-font-weight: var(--font-weight-semibold);
       font-weight: var(--font-weight-semibold);
@@ -484,8 +512,14 @@
       background-size: contain;
       vertical-align: middle;
       margin-left: calc(var(--spacing) * 3);
-      height: 1.125rem;
-      width: 1.125rem;
+      height: 0.75rem;
+      width: 0.75rem;
+      @media (width >= 48rem) {
+        height: 1.125rem;
+      }
+      @media (width >= 48rem) {
+        width: 1.125rem;
+      }
     }
     &:last-child::after {
       content: none;
@@ -501,10 +535,13 @@
 }
 .hp-breadcrumb_last {
   display: inline;
-  max-width: calc(var(--spacing) * 96);
+  max-width: var(--container-3xs);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (width >= 48rem) {
+    max-width: var(--container-xl);
+  }
 }
 .hp-search-form {
   display: flex;
@@ -1905,8 +1942,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: calc(var(--spacing) * 3);
+  gap: calc(var(--spacing) * 2);
   padding-block: calc(var(--spacing) * 8);
+  @media (width >= 48rem) {
+    gap: calc(var(--spacing) * 3);
+  }
   @media (width >= 48rem) {
     padding-block: calc(var(--spacing) * 16);
   }
@@ -3784,14 +3824,14 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-shadow {
   syntax: "*";
@@ -3923,8 +3963,8 @@
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
       --tw-font-weight: initial;
-      --tw-leading: initial;
       --tw-border-style: solid;
+      --tw-leading: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;

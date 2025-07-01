@@ -16,7 +16,7 @@ setup_postdata($post); // Обеспечим доступ к функциям ш
 			<?php if (has_post_thumbnail($post)): ?>
 				<?php the_post_thumbnail('medium_large', ['class' => 'hp-article-image__img']); ?>
 			<?php else: ?>
-				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>"
+				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>"
 					alt="Изображение отсутствует" class="hp-article-image__img" />
 			<?php endif; ?>
 		</a>

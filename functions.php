@@ -23,21 +23,27 @@ add_action('after_setup_theme', function () {
   add_theme_support('post-thumbnails');
 });
 
-add_filter('script_loader_tag', function ($tag, $handle) {
-  if ($handle === 'google-fonts-preconnect') {
-    return
-      '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n" .'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-  }
-  return $tag;
-}, 10, 2);
+add_action('wp_head', function () {
+  // 1. Preconnect к fonts.googleapis.com
+  echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+
+  // 2. Preconnect к fonts.gstatic.com с crossorigin
+  echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+
+  // 3. Основной stylesheet со шрифтом Inter
+  wp_enqueue_style(
+      'google-fonts-inter',
+      'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+      [],
+      null
+  );
+}, 1);
 
 
 add_action('wp_enqueue_scripts', function () {
   $theme_version = wp_get_theme()->get('Version');
   wp_enqueue_style('css', get_template_directory_uri() . '/index.css', array(), $theme_version, 'all');
   wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false);
-  wp_enqueue_script('google-fonts-preconnect', '', [], '', false);
-  wp_enqueue_style( 'google-fonts-inter', 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap', [], null );
 
   if (is_archive() || is_tax()) {
     wp_enqueue_script('mobile-menu-script', get_template_directory_uri() . '/assets/js/mobile-menu-button.js', array(), $theme_version, true);
@@ -53,10 +59,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script( 'comment', get_template_directory_uri() . '/assets/js/comment.js', [], $theme_version, true );
   }
 });
-
-
-
-
 
 add_action('init', function () {
   remove_action('wp_head', 'wp_generator');

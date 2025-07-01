@@ -17,7 +17,7 @@
 				</picture>
 			<?php else: ?>
 				<picture class="hp-person-picture">
-					<img class="hp-person-picture__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" width="248" height="248" alt="Изображение отсутствует" />
+					<img class="hp-person-picture__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="248" height="248" alt="Изображение отсутствует" />
 				</picture>
 			<?php endif; ?>
 			<section class="hp-person__wrapper">
@@ -80,7 +80,7 @@
 								<?php if ($avatar) : ?>
 									<img class="hp-persone-license-card__image" src="<?php echo esc_url($license_image); ?>" width="258" height="320" alt="<?php echo esc_html($license_name); ?>">
 								<?php else: ?>
-									<img class="hp-persone-license-card__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.jpg'); ?>" width="172" height="172" alt="Изображение отсутствует" />
+									<img class="hp-persone-license-card__image" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/placeholder.webp'); ?>" width="172" height="172" alt="Изображение отсутствует" />
 								<?php endif; ?>
 								<h3 class="hp-persone-license-card__title" title="<?php echo esc_html($license_name); ?>"><?php echo esc_html($license_name); ?></h3>
 								<time class="hidden" datetime="<?php echo esc_attr($datetime_attr ?? ''); ?>"><?php echo esc_html($display_date); ?></time>

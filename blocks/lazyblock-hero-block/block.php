@@ -1,7 +1,7 @@
 <?php
 $title = isset($attributes['hp-hero-title']) ? sanitize_text_field($attributes['hp-hero-title']) : t('no-text');
 $subtitle = isset($attributes['hp-hero-subtitle']) ? sanitize_text_field($attributes['hp-hero-subtitle']) : t('no-text');
-$image_url = get_template_directory_uri() . '/assets/img/hero-background.png';
+$image_url = get_template_directory_uri() . '/assets/img/hero-background.webp';
 
 $args = [
     'post_type'      => 'hp_books',

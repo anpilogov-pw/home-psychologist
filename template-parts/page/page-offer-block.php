@@ -2,7 +2,7 @@
 $text = isset($args['text']) ? sanitize_text_field($args['text']) : t('no-text');
 $link = isset($args['link']) ? $args['link'] : 'https://';
 $link_text = isset($args['link_text']) ? sanitize_text_field($args['link_text']) : t('tax.button.title');
-$image_url = get_template_directory_uri() . '/assets/img/laptop-offer-block-pattern.png';
+$image_url = get_template_directory_uri() . '/assets/img/laptop-offer-block-pattern.webp';
 ?>
 
 <div class="hp-offer-block" style="background-image: url('<?php echo $image_url; ?>');">
